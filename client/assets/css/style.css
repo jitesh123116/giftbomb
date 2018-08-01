@@ -1,0 +1,117 @@
+#requstList .filter{
+	position: relative;
+	padding-left: 34px;
+	border: 1px solid #ccc;
+}
+
+#requstList .filter .filterIcon{
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 34px;
+	width: 34px;
+	background: #ccc;
+	line-height: 34px;
+}
+
+#requstList .filter .filterSelect select{
+	width: 100%;
+	height: 34px;
+	border: none !important; 
+}
+
+.cardDetailCol{
+	border: 1px solid #ddd;
+	text-align: center;
+	padding: 15px;
+}
+.cardDetailCol > img{ width: 100% }
+/*.colorPicker{
+	height: 300px;
+}*/
+.colorPicker .sp-picker-container{
+	width: 100%;
+	box-sizing:border-box;
+}
+.cardDetailCol > h4{
+	font-size: 16px;
+}
+.cardDetailCol > h3 { margin-top: 0;}
+.sp-picker-container, .sp-palette-container{
+	float: none;
+	padding-bottom: 0;
+}
+
+/*******     SWITCH BUTTON        ***********/
+     
+.tgl {
+  display: none;
+}
+.tgl, .tgl:after, .tgl:before, .tgl *, .tgl *:after, .tgl *:before, .tgl + .tgl-btn {
+  box-sizing: border-box;
+}
+.tgl::-moz-selection, .tgl:after::-moz-selection, .tgl:before::-moz-selection, .tgl *::-moz-selection, .tgl *:after::-moz-selection, .tgl *:before::-moz-selection, .tgl + .tgl-btn::-moz-selection {
+  background: none;
+}
+.tgl::selection, .tgl:after::selection, .tgl:before::selection, .tgl *::selection, .tgl *:after::selection, .tgl *:before::selection, .tgl + .tgl-btn::selection {
+  background: none;
+}
+.tgl + .tgl-btn {
+  outline: 0;
+  display: block;
+  width: 40px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.tgl + .tgl-btn:after, .tgl + .tgl-btn:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+}
+.tgl + .tgl-btn:after {
+  left: 0;
+}
+.tgl + .tgl-btn:before {
+  display: none;
+}
+.tgl:checked + .tgl-btn:after {
+  left: 50%;
+}
+
+.tgl-light + .tgl-btn {
+  background: #f0f0f0;
+  border-radius: 2em;
+  padding: 2px;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+.tgl-light + .tgl-btn:after {
+  border-radius: 50%;
+  background: #fff;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+.tgl-light:checked + .tgl-btn {
+  background: #9FD6AE;
+}
+
+.btn {
+  padding: 6px 9px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  float: left;
+  margin-top: 15px;
+  margin-left: 3px;
+  color: #666;
+  background: #f8f8f8;
+  font-size: 12px;
+}
+/*******     SWITCH BUTTON   ENDS     ***********/

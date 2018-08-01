@@ -1,0 +1,182 @@
+/*#requstList .filter{
+	position: relative;
+	padding-left: 34px;
+	border: 1px solid #ccc;
+}*/
+
+#requstList .filter .filterIcon{
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 34px;
+	width: 34px;
+	background: #ccc;
+	line-height: 34px;
+}
+
+#requstList .filter .filterSelect select{
+	width: 100%;
+	height: 34px;
+	border: none !important; 
+}
+.cardDetailCol{
+	background: #ccc;
+	text-align: center;
+	padding: 15px;
+	position: relative;
+}
+.manageDesign .cardDetailCol{
+	padding: 0px;
+}
+.edit{
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.colorPicker{
+	height: 300px;
+}
+.colorPicker .sp-picker-container{
+	width: 300px;
+	box-sizing:border-box;
+}
+.cardDetailCol > h4{
+	color: #888;
+	font-size: 16px;
+}
+.cardDetailCol img{
+	max-width: 100%;
+}
+
+.sp-picker-container, .sp-palette-container{
+	float: none;
+	padding-bottom: 0;
+}
+
+/* merchant css start here  */
+
+.container_sidebar li > a{
+	cursor: pointer;
+}
+
+.cardsRow{
+	margin:10px 0;
+	display: flex;
+}
+.cardsRow .cardCol{
+	width: 19.8%;
+	display: inline-block;
+	padding: 20px;
+}
+.cardsInner{
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: center;
+}
+.content_body .breadcrumbs {
+    margin-bottom: 0px;
+}
+.creatPromotion label, .manageStore label, #branch_info label{
+	font-weight: normal;;
+}
+.browse{
+	position: absolute;
+	left: -9999px;
+	opacity: 0;
+}
+.cardDetailCol label{
+	margin:0 !important;
+	padding: 0 !important;
+}
+.redemption .select_location select { width: 200px !important; height: 32px;}
+.redemption .input-group.date { width: 200px;}
+.redemption label {    float: left; margin-right: 10px; font-weight: normal;}
+.redemption .input-daterange.input-group { width: 325px; margin-left: 10px;}
+.redemption .input-daterange.input-group input { width: 120px !important;}
+.btn_edit { min-width: 70px;}
+.btn_edit i.fa { margin-left: 5px;}
+
+.content_body.manage_store {}
+.content_body.manage_store label {
+    margin: 0;
+    text-align: right;
+    padding: 0;
+    padding-right: 15px;
+    font-size: 14px;
+    font-weight: normal;
+    padding-top: 7px;
+}
+.content_body.manage_store input, .content_body.manage_store select {     background-color: #f8f8f8;
+    box-shadow: none;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid #ddd;
+    max-width: 300px; height: 32px; }
+
+.btn {
+    padding: 6px 9px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    float: left;
+    margin-top: 15px;
+    margin-left: 3px;
+    color: #666;
+    background: #f8f8f8;
+    font-size: 12px;
+    margin-right: 10px;
+}
+input[type="text"].form-control, select.form-control {background-color: #f8f8f8;
+    box-shadow: none;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid #ddd;
+    max-width: 300px; height: 32px;}
+.modal-body.creatPromotion span.input-group-addon {    left: -94px;
+    position: relative;
+    z-index: 9;
+    background-color: #f8f8f8;
+    border-color: #ddd;}
+.modal-title { text-align: center; }
+.add_new.create_promotion { margin-right: 10px !important;}
+.modal-body.creatPromotion hr { width: 100%;}
+hr { background-color: #ddd; height: 1px;  width: 100%; border: 0; }
+.btn-primary:hover { color: initial !important; background-color: initial !important; border-color: initial !important;}
+
+.clearfix:before, .clearfix:after{ display: none;}
+.card_detail_controll { height: 60px;}
+.cardDetail .list-table { margin-bottom: 0;}
+.manage_store hr { margin-top: 20px;  margin-bottom: 30px; float: left; }
+.manage_store #list-table {margin-bottom: 10px;}
+.manage_store .branch_info_form {display: inline-block; float: none; margin-bottom: 30px;}
+.branch_info .select_branch label {float: left; font-size: 18px;}
+.promotion_list .table_note {margin-top: 10px; font-size: 12px;}
+.marchent_redemption .tablt_title_cont {float: left; margin-bottom: 20px;}
+.marchent_redemption .tablt_title_cont h4.tablt_title {float: left; margin-right: 20px;}
+.marchent_redemption .tablt_title_cont .input-daterange {float: left;}
+.mb_branch_info { float: none; display: inline-block; }
+
+.modal#contact_details .modal-dialog { top: 50%; transform: translateY(-50%); }
+.modal#bank_Info .modal-dialog { top: 50%; transform: translateY(-50%); }
+.modal#accountInfo .modal-dialog { top: 50%; transform: translateY(-50%); }
+.modal#branch_info .modal-dialog { top: 50%; transform: translateY(-50%); }
+
+
+.cng_cor_par {
+  float: none;
+  text-align: right;
+  position: relative;
+  height: 20px;
+  top: -10px;
+  width: 100%;
+}
+.cng_cor { 
+  display: block;
+  float: right;
+  margin-top: 0;
+  margin-right: 0;
+}
+

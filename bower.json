@@ -1,0 +1,26 @@
+{
+  "name": "giftbomb",
+  "description": "Gift Bomb",
+  "main": "index.html",
+  "authors": [
+    "sachin.kumar@affle.com"
+  ],
+  "license": "MIT",
+  "homepage": "/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "jquery": "^3.2.1",
+    "angular-ui-router": "^1.0.3",
+    "angular-bootstrap": "^2.5.0",
+    "bootstrap": "^3.3.7",
+    "angular-toastr": "^2.1.1",
+    "angular-cookies": "^1.6.1"
+  }
+}
