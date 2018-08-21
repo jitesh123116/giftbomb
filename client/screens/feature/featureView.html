@@ -1,0 +1,89 @@
+<!--<div class="breadcrumbs">
+  <ul class="breadcrumb">
+    <li> <i class="ace-icon fa fa-home home-icon"></i> Home</li>
+    <li class="active"><a ui-sref="featureList">Manage Feature List</a></li>
+    <li class="active">View Feature List</li>
+  </ul>
+  <div class="add_new">
+    <a ui-sref="dashboard.featureEdit({'id':featureList._id})"><i class="fa fa-pencil"></i> Edit List</a>
+  </div>
+</div>-->
+<a ui-sref="dashboard.feature" class="back_btn out bot" href="#/dashboardfeature">Back</a>
+<div class="breadcrumbs">
+  <h1 class="page_title">View List</h1>
+</div>
+<div class="content_body feat_view">
+<div id="list-table" class="store_list">
+  <!--<a ui-sref="dashboard.feature" class="back_btn mleft_20" href="#/dashboardfeature">Back</a><br><br>-->
+  <div class="filter_table form-group col-xs-9">
+    
+    <div class="col-xs-6 form-group">
+      <label class="col-xs-4">List Name :</label>
+      <div class="col-xs-8 widht_230"><b>{{featureList[0].listName}}</b></div>
+    </div>
+    
+    <div class="col-xs-6 form-group">
+      <label class="col-xs-4">City :</label>
+      <div class="col-xs-8 widht_230"><b>{{featureList[0].city}}</b></div>
+    </div>
+    
+    <div class="col-xs-6 form-group">
+      <label class="col-xs-4">Start Date :</label>
+      <div class="col-xs-8 widht_230"><b>{{featureList[0].startDate |  date:'MM/dd/yyyy h:mm:ss' : '+0000'}}</b></div>
+    </div>
+    
+    <div class="col-xs-6 form-group">
+      <label class="col-xs-4">End Date :</label>
+      <div class="col-xs-8 widht_230"><b>{{featureList[0].endDate |  date:'MM/dd/yyyy h:mm:ss' : '+0000'}}</b></div>
+    </div>
+    
+    
+  </div>
+  <table  class="list-table display dataTable">
+    <thead >
+      <tr >
+        <th>S. NO.</th>
+        <th>STORE ID</th>
+        <th>NAME</th>
+        <th>CATEGORY</th>
+<!--        <th>PHONE NUMBER</th>
+        <th>ADDRESS</th>-->
+      </tr>
+    </thead>
+    <tbody >
+      <tr dir-paginate="branch in featureList  | itemsPerPage: params.limit" total-items="count" current-page="current" pagination-id="featureListID">
+        <td>1</td>
+        <td>{{ (branch.stores_data[0].storeId!==undefined) ? branch.stores_data[0].storeId : ''  }}</td>
+        <td>{{ (branch.stores_data[0].storeId!==undefined) ? branch.stores_data[0].accountInfo.storeName : ''  }}</td>
+        <td>{{ (branch.stores_data[0].storeId!==undefined) ? branch.stores_data[0].accountInfo.category : ''  }}</td>
+<!--        <td>{{ (branch.branches.phoneNumber!==undefined) ? branch.branches.phoneNumber : ''  }}</td>
+        <td>{{ (branch.branches.address!==undefined) ? branch.branches.address : ''  }}</td>      -->
+      </tr>
+    </tbody>
+  </table>
+  <div class="bottom">
+    <div class="tblsubmit"></div>
+    <div class="pagination-wrapper">
+      
+      <div class="dataTables_length">
+        <label>Show upto
+          <select  class="" ng-model="params.limit">            
+            <option  value="10" ng-reflect-value="10">10</option>
+            <option  value="25" ng-reflect-value="25">25</option>
+            <option  value="50" ng-reflect-value="50">50</option>
+            <option  value="100" ng-reflect-value="100">100</option>
+          </select> 
+        </label>
+      </div>
+      
+      <dir-pagination-controls pagination-id="featureListID" class="tables_paginate"
+      boundary-links="true" 
+      on-page-change="pageChangeHandler(newPageNumber)"
+      direction-links="true" >
+      </dir-pagination-controls>
+      
+      
+    </div>
+  </div>
+</div>    
+</div>

@@ -1,0 +1,45 @@
+<div class="breadcrumbs"> 
+  <h1 class="page_title">Requests - Countries &amp; Cities</h1> 
+</div>  
+<div class="content_body no_bdcrumb">          
+    <div id="list-table" class="search_request">
+<!--      <div class="tablt_title_cont">
+        <h4 class="tablt_title">Country Request</h4>
+      </div>-->
+      <table  class="list-table display dataTable">
+        <thead>
+          <tr>
+            <th>S. No.</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Country</th>
+            <th>City</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr  class="odd" dir-paginate="str in searchCountryObj | itemsPerPage: params.limit" total-items="count" current-page="current" pagination-id="countryList">
+            <td>{{$index+1 +((params.page-1)*params.limit)}}</td>
+            <td>{{str.name}}</td>
+            <td>{{str.email}}</td>
+            <td>{{str.country}}</td>
+            <td>{{str.city}}</td>
+          </tr>              
+        </tbody>
+      </table>
+      <div  class="bottom">
+        <div  class="tblsubmit"></div>
+        <div  class="pagination-wrapper">
+          <div  class="dataTables_length">
+            <label >Show upto <select  class="" ng-model="params.limit"> <option  value="10" ng-reflect-value="10">10</option><option  value="25" ng-reflect-value="25">25</option><option  value="50" ng-reflect-value="50">50</option><option  value="100" ng-reflect-value="100">100</option></select> </label>
+          </div>
+        <div>
+        <dir-pagination-controls pagination-id="countryList" class="tables_paginate"
+        boundary-links="true" 
+        on-page-change="pageChangeHandler(newPageNumber)"
+        direction-links="true" >
+        </dir-pagination-controls>
+        </div>
+      </div>
+    </div>
+  </div>        
+</div>

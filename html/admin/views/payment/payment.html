@@ -1,0 +1,155 @@
+<div class="top_nav" ng-include="'views/common/top_nav.html'"></div>
+    <div class="container_main">
+      <aside class="container_sidebar" ng-include="'views/common/sidebar.html'">  </aside>
+      <div class="container_body">
+
+        <div class="breadcrumbs">
+            <ul class="breadcrumb">
+              <li> <i class="ace-icon fa fa-home home-icon"></i> Home</li>
+              <li class="active">Manage Payment</li>
+            </ul>
+          </div>       
+        <div class="content_body">          
+          <div id="list-table" class="payment">
+            
+            <div class="display_controlls">
+              <div class="display_board">
+                <p>Total Cards</p>
+                <h3>120</h3>
+              </div>
+              <div class="display_board">
+                <p>Total Revenue</p>
+                <h3>$20000.00</h3>
+              </div>
+              <div class="display_board">
+                <p>Gift Bomb Earning</p>
+                <h3>$5000.00</h3>
+              </div>
+            </div>
+            
+            <div class="table_control">
+              <div class="search">
+                <label>Category</label>
+                <input type="text" class="form-control" name="category" placeholder="Category" /><i class="fa fa-search"></i>
+              </div>
+              <div class="multi_select">
+                <label>City</label>
+                <select multiple="" class="chosen-select form-control" id="" data-placeholder="Choose a City">
+                  <option value="AL">Alabama</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
+                </select>
+              </div>
+              
+              <div class="search">
+                <label>Store</label>
+                <input type="text" class="form-control" name="category" placeholder="Search a Store" /><i class="fa fa-search"></i>
+              </div>
+<!--              <div class="multi_select">
+                 <label>Store</label>
+                <select multiple="" class="chosen-select form-control" id="" data-placeholder="Choose a Store">
+                  <option value="AL">Alabama</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
+                </select>
+              </div>-->
+              <div class="date_range">
+                <label>Date</label>
+                <div class="row">
+                  <div class="col-xs-8 col-sm-11">
+                    <div class="input-daterange input-group">
+                      <input type="text" class="input-sm form-control" name="start" placeholder="Date Start" />
+                      <span class="input-group-addon">
+                        <i class="fa fa-exchange"></i>
+                      </span>
+                      <input type="text" class="input-sm form-control" name="end" placeholder="Date End" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group export_btn">
+                <button class="">Export <i class="fa fa-share"></i></button>
+              </div>
+            </div>
+            
+            <table  class="list-table display dataTable">
+              <thead >
+                <tr>
+                  <th>S. NO.</th>
+                  <th>TRANSACTION ID</th>
+                  <th>TRANSACTION DATE</th>
+                  <th>STORE NAME</th>
+                  <th>CATEGORY</th>
+                  <th>AMOUNT PAID-OUT</th>                  
+                </tr>
+              </thead>
+              <tbody >
+                <tr  class="odd">
+                  <td>1</td>
+                  <td>123</td>
+                  <td>20-07-17</td>
+                  <td>Monginis Bakery</td>
+                  <td>Food</td>
+                  <td>250</td>                  
+                </tr>
+                <tr  class="even">
+                  <td>1</td>
+                  <td>123</td>
+                  <td>20-07-17</td>
+                  <td>Monginis Bakery</td>
+                  <td>Food</td>
+                  <td>250</td>                   
+                </tr>
+                <tr  class="odd">
+                  <td>1</td>
+                  <td>123</td>
+                  <td>20-07-17</td>
+                  <td>Monginis Bakery</td>
+                  <td>Food</td>
+                  <td>250</td>                   
+                </tr>
+              </tbody>
+            </table>
+            <div  class="bottom">
+              <div  class="tblsubmit"></div>
+              <div  class="pagination-wrapper">
+                <div  class="dataTables_length">
+                  <label >Show upto <select  class=""> <option  value="10" ng-reflect-value="10">10</option><option  value="25" ng-reflect-value="25">25</option><option  value="50" ng-reflect-value="50">50</option><option  value="100" ng-reflect-value="100">100</option></select> </label>
+                </div>
+                <div  class="table-page-info"><div  aria-live="polite" class="dataTables_info" role="status">records.</div></div>
+                <div  class="dataTables_paginate paging_full_numbers" id="advertiser-details_paginate">
+                  <a  class="paginate_button first disabled" data-dt-idx="0" tabindex="0">First</a>
+                  <a  class="waves-effect waves-light btn paginate_button previous disabled" data-dt-idx="1" tabindex="0">Prev</a>
+                  <span ><a  class="waves-effect waves-light btn paginate_button current" data-dt-idx="2" tabindex="0">1</a></span>
+                  <a  class="waves-effect waves-light btn paginate_button next disabled" data-dt-idx="3" tabindex="0">Next</a>
+                  <a  class="paginate_button last disabled" data-dt-idx="4" tabindex="0">Last</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        
+      </div>
+    </div>
+<div class="footer" ng-include="'views/common/footer.html'"></div>
+		<script src="assets/js/bootstrap-datepicker.js"></script>	
+    <script type="text/javascript">
+			jQuery(function($) {						
+				if(!ace.vars['touch']) {
+					$('.chosen-select').chosen({allow_single_deselect:true}); 
+
+          $('#chosen-multiple-style .btn').on('click', function(e){
+						var target = $(this).find('input[type=radio]');
+						var which = parseInt(target.val());
+						if(which == 2) $('#form-field-select-4').addClass('tag-input-style');
+						 else $('#form-field-select-4').removeClass('tag-input-style');
+					});
+				}
+        //For Data Range Picker
+        $('.input-daterange').datepicker({autoclose:true});		
+  });
+		</script>
+
+  

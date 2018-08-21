@@ -1,0 +1,100 @@
+<div class="top_nav" ng-include="'views/common/top_nav.html'"></div>
+<div class="container_main">
+  <aside class="container_sidebar" ng-include="'views/common/sidebar.html'">  </aside>   
+  <div class="container_body">
+    <div class="breadcrumbs">
+				<ul class="breadcrumb">
+					<li> <i class="ace-icon fa fa-home home-icon"></i> Home</li>
+          <li>
+            <a ui-sref="request">View Request Detail</a>
+          </li>
+					<li class="active">Payment Details</li>
+				</ul>
+		</div>
+    
+    <div class="content_body">
+      <div class="branch_add ">            
+      <form method="post">
+          <div class="form-group"><h4>ACCOUNT INFORMATION</h4></div>
+          <div class="form-group account_info">          	
+            <div class="form-group name">
+              <label>Name</label>
+                <div class="col-xs-9" ><input type="text" class="form-control" disabled ></div>
+            </div>
+            <div class="form-group category">
+              <label>Category</label>
+              <div class="col-xs-9" ><input type="text" name="" class="form-control" disabled></div>
+            </div>
+          </div>
+          <div class="cardDesign">
+            <div class="cardDetail">
+              <div class="form-group"><h4>PAYMENT DETAIL</h4></div>
+              <div class="clearfix form-group">
+                <div class="col-md-3">
+                  <div class="cardDetailCol">
+                    <h4 class="text-center">Total Cards</h4>
+                    <h3>121</h3>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="cardDetailCol">
+                    <h4 class="text-center">Total Gifted Amount</h4>
+                    <h3>$ 2000.00</h3>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="cardDetailCol">
+                    <h4 class="text-center">Account Balance</h4>
+                    <h3>$ 500.00</h3>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="cardDetailCol">
+                    <h4 class="text-center">Received Amount</h4>
+                    <h3>$ 1200.00</h3>
+                  </div>
+                </div>
+              </div>
+				<hr class="" />
+              <div class="clearfix form-group requested_amount">
+                <div class="clearfix col-md-9">
+                  <label class="col-xs-4">Requested Amount</label>
+                  <div class="col-xs-6" >
+                    <input type="text" class="form-control" value="$ 250" disabled>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        
+          <div class="clearfix form-group">
+            <div class="col-md-12">
+              <div class="pull-right">
+                <div class="form-group col-md-6">
+                  <button class="btn btn-block">Approve</button>
+                </div>
+                <div class="form-group col-md-6">
+                  <button class="btn btn-block">Decline</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="clear"></div>
+        </form> 
+      </div>   
+    </div>
+  </div>
+</div>
+<div class="footer" ng-include="'views/common/footer.html'"></div>
+    
+<script type="text/javascript">
+  $("#flat").spectrum({
+      preferredFormat: "hex",
+      flat: true,
+      showInput: true
+  });
+</script>

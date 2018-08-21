@@ -1,0 +1,175 @@
+<a ui-sref="dashboard.user" class="back_btn out bot">Back</a>
+<div class="breadcrumbs">
+  <h1 class="page_title">User Information</h1>
+</div>
+<div class="content_body no_bdcrumb">
+  <div class="branch_add store_view_cont user_information" >      
+      <div class="col-xs-6 form-group">
+        <label class="col-xs-4">User Name :</label>
+        <div class="col-xs-8">
+          <b>{{user.username.fname+" "+user.username.lname}}</b>
+        </div>
+      </div>
+      <div class="col-xs-6 form-group">
+        <label class="col-xs-4">Gender :</label>
+        <div class="col-xs-8">
+          <b>{{user.gender}}</b>
+        </div>
+      </div>
+      
+    <div class="col-xs-6 form-group">
+      <label class="col-xs-4">DOB :</label>
+      <div class="col-xs-8">
+       <b>{{user.dob}}</b>
+      </div>
+    </div>
+    <div class="col-xs-6 form-group">
+      <label class="col-xs-4">Phone :</label>
+      <div class="col-xs-8">
+        <b>{{user.phoneNumber}}</b>
+      </div>
+    </div>
+    <div class="col-xs-6 form-group">
+      <label class="col-xs-4">Email ID :</label>
+      <div class="col-xs-8">
+        <b>{{user.email}}</b>
+      </div>
+    </div>
+    <div class="col-xs-6 form-group">
+      <label class="col-xs-4">Status :</label>
+      <div class="col-xs-8">
+        <b>{{user.status}}</b>
+      </div>
+    </div>
+
+  <!--<hr class="" style=" width: 100%;" >-->
+    <div class="clear" style="display: inline-block;"></div>    
+  </div>   
+
+
+
+<div class="breadcrumbs breadcrumbs_1">
+  <h1 class="page_title">Gift Card Details</h1>
+</div>
+
+<div id="list-table" class="store_list location city">
+  <div class="table_control">
+    <div class="table_filter">
+      <div class="gift_details">
+        <label class="">Gifted By/Gifted To :</label>
+        <div class="by_to">
+          <select class="form-control" required="" id="gifted_by_to">
+            <option value="gifted_by">Gifted By</option>
+            <option value="gifted_to">Gifted To</option> </select>
+        </div>                
+      </div>
+    </div>
+  </div>
+
+  <table  class="list-table display dataTable gifted_byt">
+    <thead>          
+      <tr >
+        <th>S. No.</th>
+        <th>Gift Card Number</th>
+        <th>Gifted On</th>
+        <th>Gifted By/Gifted To</th>
+        <th>Original Amount</th>
+        <th>Redeemed Amount</th>
+        <th>Balance Amount</th>
+        <th>Store Name</th>
+        <!--<th  class="action">Action</th>-->
+      </tr>
+    </thead>
+    <tbody >
+      <tr>
+        <td>01</td>
+        <td>12</td>
+        <td>09 Sep. 2017</td>
+        <td>2079</td>
+        <td>345</td>
+        <td>3473</td>
+        <td>32</td>
+        <td>spj</td>
+<!--        <td>
+          <a class="action_icon"> <i class="fa fa-eye"></i> </a>
+          <a class="action_icon"> <i class="fa fa-pencil"></i> </a>
+        </td>-->
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <table  class="list-table display dataTable gifted_tot">
+    <thead>          
+      <tr >
+        <th>S. No.</th>
+        <th>Gift Card Number</th>
+        <th>Gifted On</th>
+        <th>Gifted By/Gifted To</th>
+        <th>Original Amount</th>
+        <th>Redeemed Amount</th>
+        <th>Balance Amount</th>
+        <th>Store Name</th>
+        <!--<th  class="action">Action</th>-->
+      </tr>
+    </thead>
+    <tbody >
+      <tr>
+        <td>02</td>
+        <td>12</td>
+        <td>09 Sep. 2017</td>
+        <td>2079</td>
+        <td>345</td>
+        <td>3473</td>
+        <td>32</td>
+        <td>spj</td>
+<!--        <td>
+          <a class="action_icon"> <i class="fa fa-eye"></i> </a>
+          <a class="action_icon"> <i class="fa fa-pencil"></i> </a>
+        </td>-->
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="bottom">
+    <div class="tblsubmit"></div>
+    <div class="pagination-wrapper">
+      <div class="dataTables_length">
+        <label>Show upto <select  class="" ng-model="params.limit"> 
+            <option  value="10" ng-reflect-value="10">10</option>
+            <option  value="25" ng-reflect-value="25">25</option>
+            <option  value="50" ng-reflect-value="50">50</option>
+            <option  value="100" ng-reflect-value="100">100</option>
+          </select> 
+        </label>
+      </div>
+      
+      <dir-pagination-controls pagination-id="storeListID" class="tables_paginate"
+      boundary-links="true" 
+      on-page-change="pageChangeHandler(newPageNumber)"
+      direction-links="true" >
+      </dir-pagination-controls>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+  jQuery(document).ready(function(){
+    jQuery( "select#gifted_by_to" )
+  .change(function () {
+    var gifted_to = jQuery("select#gifted_by_to" ).val();
+    if(gifted_to === "gifted_to"){
+       $("table.gifted_byt").hide();
+       $("table.gifted_tot").show();
+    }
+    if(gifted_to === "gifted_by"){
+       $("table.gifted_tot").hide();
+       $("table.gifted_byt").show(); 
+    }
+  });    
+  });
+
+</script>

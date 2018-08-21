@@ -1,0 +1,226 @@
+<div class="top_nav" ng-include="'views/common/top_nav.html'"></div>
+<aside class="container_sidebar" ng-include="'views/common/sidebar.html'"></aside>
+<div class="container_main">  
+  <div class="container_body manageStore">
+    <a ui-sref="manageStore" class="back_btn out bot ng-scope" href="#/dashboardstore">Back</a>
+    <div class="breadcrumbs">
+      <h1 class="page_title">Edit Account Information</h1>
+		</div>      
+        
+    <div class="content_body manage_store">
+      <!-- account_inform div start here -->
+      <div class="account_inform">          
+        <div id="list-table" class="">
+          <div class="tablt_title_cont"> 
+            <h4 class="sub_ttl">Store Information</h4>
+<!--            <div class="form-group export_btn">
+              <button class="" data-toggle="modal" data-target="#accountInfo" ng-click="fetchData('accountInfo');">Edit <i class="fa fa-pencil"></i></button>
+            </div>-->
+          </div>
+        </div>
+        <div class="col-md-12 account_info_form">                  	                   
+          <div class="form-group col-md-6">
+            <label class="col-xs-4">Store Name : <span class="red">*</span> </label>
+            <div class="col-xs-8" ><input type="text" ng-model="storeUpdateData.storeName" class="form-control" ng-required = "true"></div>
+          </div>
+          <div class=" form-group col-md-6">
+                 <label class="col-xs-4">Category : <span class="red">*</span> </label>
+                 <div class="col-xs-8" >                 
+                  <select class="form-control" ng-model="storeUpdateData.category" ng-required = "true">
+                    <option value="Restaurant">Restaurant</option>
+                    <option value="Bar">Bar</option>
+                    <option value="Brewery">Brewery</option>
+                    <option value="Coffee Shop">Coffee Shop</option>
+                    <option value="Bakery">Bakery</option>
+                    <option value="Candy Store">Candy Store</option>
+                    <option value="Liquor Store">Liquor Store</option>
+                    <option value="Health Club">Health Club</option>
+                    <option value="Health Store">Health Store</option>
+                    <option value="Retail Store">Retail Store</option>
+                    <option value="Grocery">Grocery</option>
+                    <option value="Furniture Store">Furniture Store</option>
+                    <option value="Home & Appliance Store">Home & Appliance Store</option>
+                    <option value="Dispensary">Dispensary</option>
+                    <option value="Activity Center">Activity Center</option>
+                    <option value="Food Delivery">Food Delivery</option>
+                    <option value="University">University</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Hardware Store">Hardware Store</option>
+                    <option value="Massage">Massage</option>
+                    <option value="Hardware Store">Hardware Store</option>
+                    <option value="Hair Salon">Hair Salon</option>
+                    <option value="Nail Salon">Nail Salon</option>
+                    <option value="Hotel">Hotel</option>
+                    <option value="Resort">Resort</option>
+                    <option value="Golf Course">Golf Course</option>
+                    <option value="Tattoo Parlor">Tattoo Parlor</option>
+                    <option value="Bookstore">Bookstore</option>
+                    <option value="Pet Store">Pet Store</option>
+                    <option value="Jewelry Store">Jewelry Store</option>
+                    <option value="Sporting Good Store">Sporting Good Store</option>
+                    <option value="Toy Store">Toy Store</option>
+                    <option value="Baby Store">Baby Store</option>
+                    <option value="Art Gallery">Art Gallery</option>
+                    <option value="Gas Station">Gas Station</option>
+                    <option value="Other">Other</option>
+                  </select>
+                 </div>
+              </div>
+        
+              <div class=" form-group col-md-6">
+                <label class="col-xs-4">Country : <span class="red">*</span></label>
+                <div class="col-xs-8" >                  
+                   <select class="form-control" ng-model="storeUpdateData.country"  placeholder="Select Country" ng-required = "true">
+                    <option value="">Select Country</option>
+                    <option ng-repeat="country in countryList" value="{{country}}">{{country}}</option>
+                  </select>
+                </div>
+              </div>
+        
+              <div class=" form-group col-md-6">
+                 <label class="col-xs-4">Website:</label>
+                 <div class="col-xs-8" ><input type="text" ng-model="storeUpdateData.website" placeholder="optional" class="form-control" ></div>
+              </div>
+        
+              <div class=" form-group col-md-6">
+                 <label class="col-xs-4">Logo :</label>
+                 <div class="col-xs-8" >
+                   <div class="fileinput fileinput-new" data-provides="fileinput">
+                      <div class="fileinput-new thumbnail" style="width: 100px; height: 60px;">
+                        <span class="col-xs-2 span_img"><img ng-src="{{store.accountInfo.storeLogo}}" ></span>
+                        <img data-src="holder.js/100%x100%" alt="..." src="">                  
+                      </div>
+                      <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 100px; max-height: 60px;"></div>
+                      <div>
+                          <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+                          <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                      </div>
+                  </div>
+                 </div>
+              </div>
+              
+              <div class="form-group col-md-6">
+                  <label class="col-xs-4" >Image : <span class="red">*</span></label>
+                  <div class="col-xs-8" >
+                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                      <div class="fileinput-new thumbnail" style="width: 100px; height: 60px;">
+                        <span class="col-xs-2 span_img"><img ng-src="{{BASEURL}}{{storeUpdateData.storeThumbnail}}" ></span>
+                        <img data-src="holder.js/100%x100%" alt="..." src="">                  
+                      </div>
+                      <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 100px; max-height: 60px;"></div>
+                      <div>
+                          <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+                          <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                      </div>
+                  </div>          
+                  </div>
+             </div> 
+        </div>
+        <hr>
+      </div>
+      
+      <!-- Additional_inform div end here -->
+      
+      <div class="account_inform">          
+        <div id="list-table" class="">
+          <div class="tablt_title_cont"> 
+            <h4 class="sub_ttl">Additional Information</h4>
+<!--            <div class="form-group export_btn">
+              <button class="" data-toggle="modal" data-target="#additionalInfo" ng-click="">Edit <i class="fa fa-pencil"></i></button>
+            </div>-->
+          </div>
+        </div>
+        
+        <div class="col-md-12 account_info_form">                  	                            
+          <div class="form-group col-md-6">
+            <label class="col-xs-4">Description : <span class="red">*</span> </label>
+            <div class="col-xs-8" ><input type="text" ng-model="" class="form-control" ng-required = "true"></div>
+          </div>
+
+          <div class="form-group col-md-6">
+            <label class="col-xs-4">Verification Code :<span class="red">*</span> </label>
+            <div class="col-xs-8" ><input type="text" ng-model="" class="form-control" ng-required = "true"></div>
+          </div>
+        </div>
+        <hr>
+      </div>
+      
+      <!-- contact_details div start here -->
+      <div class="contact_details">      
+        <div id="list-table" class="">
+          <div class="tablt_title_cont">
+            <h4 class="sub_ttl">Contact Details</h4>
+<!--            <div class="form-group export_btn">
+              <button class="" data-toggle="modal" data-target="#contact_details" ng-click="fetchData('contactInfo');">Edit <i class="fa fa-pencil"></i></button>
+            </div>-->
+          </div>
+        </div>      
+        <div class="col-md-12 contact_details_form">       
+          <div class=" form-group col-md-6">
+            <label class="col-xs-4"> First Name : <span class="red">*</span></label>
+            <div class="col-xs-8" ><input type="text" ng-model="storeUpdateData.firstName" class="form-control" ng-required = "true"></div>
+          </div>
+           <div class=" form-group col-md-6">
+            <label class="col-xs-4"> Last Name : <span class="red">*</span></label>
+            <div class="col-xs-8" ><input type="text" ng-model="storeUpdateData.lastName" class="form-control" ng-required = "true"></div>
+          </div>
+          <div class=" form-group col-md-6">
+           <label class="col-xs-4">Phone : <span class="red">*</span></label>
+           <div class="col-xs-8" ><input type="text" ng-model="storeUpdateData.contactNumber" class="form-control" ng-required = "true"></div>
+          </div>            
+          <div class=" form-group col-md-6">
+             <label class="col-xs-4">Email : <span class="red">*</span></label>
+             <div class="col-xs-8" ><input type="email" ng-model="storeUpdateData.email" class="form-control" ng-required = "true"></div>
+          </div>
+        </div>        
+        <hr>
+      </div>
+      <!-- contact_details div end here -->
+      
+      <!-- bank_account_info div start here -->
+      <div class="bank_account_info">     
+        <div id="list-table" class="">
+          <div class="tablt_title_cont">
+            <h4 class="sub_ttl">Bank Account Information</h4>
+<!--                <div class="form-group export_btn">
+              <button class="" data-toggle="modal" data-target="#bank_Info" ng-click="fetchData('bankInfo');">Edit <i class="fa fa-pencil"></i></button>
+            </div>-->
+          </div>
+        </div>      
+        <div class="col-md-12 bank_account_info_form">        
+          <div class=" form-group col-md-6">
+             <label class="col-xs-4">Account Number : <span class="red">*</span></label>
+             <div class="col-xs-8" ><input type="text" ng-model="bankAccountInfo.accountNumber" class="form-control" ng-required = "true"></div>
+          </div>
+          <div class=" form-group col-md-6">
+             <label class="col-xs-4">Routing Number : <span class="red">*</span></label>
+             <div class="col-xs-8" ><input type="text" ng-model="bankAccountInfo.routingNumber" class="form-control" ng-required = "true"></div>
+          </div>
+          <div class=" form-group col-md-6">
+             <label class="col-xs-4">Name on the Account : <span class="red">*</span></label>
+             <div class="col-xs-8" ><input type="text" ng-model="bankAccountInfo.nameOfTheAccount" class="form-control" ng-required = "true"></div>
+          </div>
+          <div class=" form-group col-md-6">
+             <label class="col-xs-4">Bank Address : <span class="red">*</span></label>
+             <div class="col-xs-8" ><input type="text" ng-model="bankAccountInfo.bankAddress" class="form-control" ng-required = "true"></div>
+          </div>                
+        </div>
+        <hr>
+      </div>
+      
+      <div class="col-xs-12 form-group branch_add" style="margin-bottom: 10px;">
+        <label class="col-xs-6"></label>
+        <div class="col-xs-6" style="padding-left: 19%;"> 
+          <div style="width: 300px;">
+          <button class="save_btn pull-right btn_ok" type="submit" style="margin-right: 0;">Save</button> 
+          <button class="cancel_btn pull-right btn_cancel" ui-sref="manageStore" href="#/manageStore">Cancel</button>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+  	        
+    </div><br><br><br>
+  </div>
+</div>
+<div class="footer" ng-include="'views/common/footer.html'"></div>
+

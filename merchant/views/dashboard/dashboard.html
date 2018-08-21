@@ -1,0 +1,161 @@
+<div class="top_nav" ng-include="'views/common/top_nav.html'"></div>
+<aside class="container_sidebar" ng-include="'views/common/sidebar.html'">  </aside>
+<div class="container_main">      
+  <div class="container_body">
+    <div class="breadcrumbs">
+      <h1 class="page_title">Recent Redemptions</h1>
+		</div>       
+        <div class="content_body">           
+        	<div class="cardsRow">
+        		<div class="cardCol">
+        			<div class="cardsInner">
+        				<p>Cards Sold</p>
+        				<h3>130</h3>
+        			</div>
+        		</div>
+        		<div class="cardCol">
+        			<div class="cardsInner">
+        				<p>Sales</p>
+        				<h3>$8980</h3>
+        			</div>
+        		</div>
+        		<div class="cardCol">
+        			<div class="cardsInner">
+        				<p>Redeemed Amount</p>
+        				<h3>$8000</h3>
+        			</div>
+        		</div>
+        		<div class="cardCol">
+        			<div class="cardsInner">
+        				<p>Balance Amount</p>
+        				<h3>$3000</h3>
+        			</div>
+        		</div>
+        		<div class="cardCol">
+        			<div class="cardsInner">
+        				<p>Credited Amount</p>
+        				<h3>$6000</h3>
+        			</div>
+        		</div>
+        	</div>
+
+         <div>
+<!--         	<div class="form-group col-md-12 clearfix">
+            <h4 class="pull-left">GIFT CARD LIST (Last 30 Days) </h4>
+            <div class="pull-right"><a ui-sref="manageRedemption" class="btn">View All</a></div>
+         	</div>-->
+         	<div id="list-table" class="store_list">
+            <div class="tablt_title_cont">
+              <!--<h4 class="tablt_title">Recent Redemptions</h4>-->
+              <div class="form-group export_btn">
+                <button class="" ui-sref="manageRedemption">View All</button>
+                <br><br>
+              </div>
+            </div>
+		      <table  class="list-table display dataTable">
+		        <thead>
+		          <tr>
+                <th>S. NO.</th>
+                <th>REDEMPTION ID</th>
+		          	<th>REDEMPTION DATE</th>
+		            <th>GIFT CARD NUMBER</th>
+		            <th>REDEEMED AMOUNT</th>
+		            <th>BALANCE AMOUNT</th>
+		            <th>ORIGINAL AMOUNT</th>
+		            <th>PURCHASE DATE</th>
+		          </tr>
+		        </thead>
+		        <tbody >
+		          <tr class="odd">
+                <td>1</td>
+                <td>20</td>
+		            <td>20/May/2017</td>
+		            <td>7766655444</td>
+		            <td>$20</td>
+		            <td>$80</td>
+		            <td>$100</td>            
+		            <td>8/May/2017</td>
+		          </tr>
+		          <tr class="even">
+                <td>2</td>
+                <td>10</td>
+		            <td>20/May/2017</td>
+		            <td>7766655444</td>
+		            <td>$20</td>
+		            <td>$80</td>
+		            <td>$100</td>            
+		            <td>8/May/2017</td>
+		          </tr>
+		        </tbody>
+		      </table>
+		    </div>
+         </div>
+
+         <!--<hr>-->
+
+        
+<!--         	<div class="form-group col-md-12 clearfix">
+         	<h4 class="pull-left">PROMOTION LIST (Last 30 Days) </h4>
+         	<div class="pull-right"><a ui-sref="promotion" class="btn">View All</a></div>
+         	</div>-->
+
+          <div class="breadcrumbs breadcrumbs_1 brcr">
+            <h1 class="page_title">Recent Promotions</h1>
+          </div>
+
+         	<div id="list-table" class="store_list">
+            <div class="tablt_title_cont">
+              <!--<h4 class="tablt_title">Recent Promotions</h4>-->
+              <div class="form-group export_btn">
+                <br><br>
+                <button class="" ui-sref="promotion">View All</button>
+                <br><br>
+              </div>
+            </div>
+		      <table  class="list-table display dataTable">
+		        <thead >
+		          <tr >
+                <th>S. NO.</th>
+		          	<th>PROMOTION ID</th>
+		            <th>START DATE</th>
+		            <th>END DATE</th>
+		            <th>PROMOTION NAME</th>
+		            <th>ACTUAL VALUE</th>
+		            <th>OFFER VALUE</th>
+		            <th>CARD SOLD</th>
+		            <th>REVENUE EARNED</th>
+		          </tr>
+		        </thead>
+		        <tbody >
+		          <tr  class="odd">
+		            <td>01</td>
+                <td>05</td>
+		            <td>8/May/2017</td>
+		            <td>8/May/2017</td>
+		            <td>Weekend sale</td>
+		            <td>$100</td>            
+		            <td>$40</td>
+		            <td>19</td>            
+		            <td>$600</td>
+		          </tr>
+		          <tr  class="even">
+                <td>02</td>
+		            <td>05</td>
+		            <td>8/May/2017</td>
+		            <td>8/May/2017</td>
+		            <td>Weekend sale</td>
+		            <td>$100</td>            
+		            <td>$40</td>
+		            <td>19</td>            
+		            <td>$600</td>
+		          </tr>
+		          
+		        </tbody>
+		      </table>
+		    </div>
+       
+
+        </div>
+      </div>
+    </div>
+<div class="footer" ng-include="'views/common/footer.html'"></div>

@@ -1,0 +1,149 @@
+#list-table.store_list .filter_table  .search_box {
+    padding-left: 10px;
+    position: relative;
+    margin-left: 10px;
+    float: left;
+}
+#list-table.store_list .filter_table  .search_box label {
+    font-weight: normal;
+    float: left;
+    margin-right: 10px;
+}
+#list-table.store_list .filter_table  .search_box input {
+    border-color: #ddd;
+    background: #f8f8f8;
+    border-radius: 4px;
+    height: 32px;
+    box-shadow: none;
+    padding-left: 30px;
+    font-size: 12px;
+    width: 200px;
+    display: inline-block;
+}
+#list-table.store_list .filter_table  .search_box i.fa-search {
+    position: absolute;
+    top: 1px;
+    font-size: 14px;
+    color: #b299a5;
+    padding: 8px;
+    right: 170px;
+}
+#list-table.store_list .filter_table  .search_box_user {
+    float: none;
+    display: inline-block;
+    position: relative;
+    top: -5px;
+}
+#list-table.store_list .filter_table  .search_box_user label{
+      position: relative;
+    top: 4px;
+}
+#list-table .tablt_title_cont .tablt_title {
+    font-size: 30px;
+    clear: both;
+    padding: 5px;
+    margin: 0;
+    padding-left: 0;
+    display: inline-block;
+    margin-left: 10px;
+    border: 0;
+    background: initial;
+    text-transform: uppercase;
+}
+#requstList .select_location label{
+    position: relative;
+    top: 5px;
+    margin-left: 5px;
+}
+.select_city_flist label {
+    position: relative;
+    top: 5px;
+}
+.select_city_flist {
+    margin-left: 20px;
+    display: inline-block;
+}
+.featured_list_filter {
+    margin-bottom: 15px;
+}
+.featured_list_filter .add_new {
+    margin-top: 0px;
+}
+.feat_list_add_filter {
+  
+}
+.widht_330 {width: 330px;}
+.widht_230 {width: 230px;}
+.input-daterange .input-group-addon {    
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border: 1px solid #ddd;
+    border-left: 0;
+}
+.save_list_flist { clear: both; margin-right: 15px !important; }
+.height_58 { height: 58px;}
+.mleft_20 { margin-left: 20px !important;}
+
+
+
+.login h4.login_title {    
+  padding-left: 0;
+  text-align: center
+}
+.login .forgot_password_link {
+  float: right;
+  padding-left: 0;
+}
+.container_body .breadcrumbs ul.breadcrumb {
+  visibility: hidden;
+}
+#list-table.store_list .filter_table .search {
+    padding-left: 10px;
+    position: relative;
+    margin-left: 10px;
+    float: left;
+}
+.store_list.location.city {
+  border-top: 3px solid #ddd;
+    padding-top: 40px;
+}
+#list-table > table { 
+  width: 100%;
+
+}
+.modal#add_city .modal-dialog { 
+    position: absolute;
+    left: 50%;
+    margin-left: -300px;
+}
+.modal#add_country .modal-dialog { 
+    position: absolute;
+    left: 50%;
+    margin-left: -300px;
+}
+.add_new > a {
+    height: initial;
+    float: left;
+    background-color: #5d8fc2 !important;
+    border: 0px;
+    text-shadow: initial;
+    font-size: 12px;
+    padding: 6px 10px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 0px;
+    border-radius: 3px;
+    line-height: 19px;
+    margin: 0 0 1px 10px;
+}
+.store_list.location.city .add_new {
+    position: relative;
+    float: right;
+    right: 20px;
+}
+.store_list.location.country .add_new {
+    position: relative;
+    float: right;
+    right: 20px;
+}
+#list-table.store_list.location.country  { margin-bottom: 0;}

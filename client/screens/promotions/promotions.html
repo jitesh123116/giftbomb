@@ -1,0 +1,119 @@
+        <div class="breadcrumbs">
+          <h1 class="page_title">Promotions</h1>  
+					</div>       
+        <div class="content_body promt">          
+          <div id="list-table" class="store_list promotion ">
+            <div class="table_control">
+              <div class="multi_select">
+                <label>Filter Stores</label>
+                <input class="chosen-select form-control" id="search" ng-model="search" ng-keyup="setSerachData()" autofocus type="text" name="search" data-placeholder="Choose a Store..." placeholder="Filter Stores">                
+              </div>
+                <div class="date_range">
+                <label>Date</label>
+                <div class="row">
+                  <div class="col-xs-8 col-sm-11">
+                    <div class="input-daterange input-group">
+                      <input type="text" class="input-sm form-control" name="start" placeholder="Start Date" />
+                      <span class="input-group-addon">
+                        <i class="fa fa-exchange"></i>
+                      </span>
+                      <input type="text" class="input-sm form-control" name="end" placeholder="End Date" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group export_btn">
+                <!--<button class="" ng-click="SearchStoreData()">Search</button>-->
+                <button class="">Export <i class="fa fa-share"></i></button>                
+              </div>
+            </div>
+            <!--<h4 class="tablt_title">Promotion List</h4>-->
+<!--            <div class="tablt_title_cont">
+              <h4 class="tablt_title">Promotion List</h4>
+              <div class="form-group export_btn">
+                <button class="">Export <i class="fa fa-share"></i></button>
+              </div>
+            </div>-->
+            <table  class="list-table display dataTable">
+              <thead >
+                <tr >                  
+                  <th>S. NO.</th>
+                  <th>PROMOTION ID</th>
+                  <th>PROMOTION NAME</th>
+                  <th>STORE NAME</th>
+                  <th>CATEGORY</th>
+                  <th>ACTUAL VALUE</th>
+                  <th>OFFER VALUE</th>
+                  <th>START DATE</th>
+                  <th>END DATE</th>
+                  <th>CARDS SOLD</th>
+                  <th>SALES</th>
+                  <th  class="action">ACTION</th>
+                </tr>
+              </thead>
+              <tbody >
+                <tr dir-paginate="promotions in promotionList  | itemsPerPage: params.limit" total-items="count" current-page="current" pagination-id="promotionId">
+        <td>{{$index + 1 +((params.page-1)*params.limit)}}</td>
+        <td>{{promotions.promotionId}}</td>
+        <td>{{promotions.promotionName}}</td>
+        <td>{{promotions.storeName}}</td>
+        <td>{{promotions.category}}</td>
+        <td>{{promotions.actualValue}}</td>
+        <td>{{promotions.offerValue}}</td>
+        <td>{{promotions.startDate}}</td>
+        <td>{{promotions.endDate}}</td>
+        <td>{{promotions.cardSolds}}</td>
+        <td>{{promotions.totalCoupons}}</td>           
+        <td>
+          <a class="action_icon" ui-sref="dashboard.storeView({'id':store._id})">
+            <i class="fa fa-eye"></i>
+          </a>
+          <a class="action_icon" ui-sref="dashboard.storeEdit({'sid':store._id})">
+            <i class="fa fa-pencil"></i>
+          </a>
+        </td>
+      </tr>
+              </tbody>
+            </table>
+            <div  class="bottom">
+              <div  class="tblsubmit"></div>
+              <div  class="pagination-wrapper">
+                <div  class="dataTables_length">
+                  <label >Show upto <select  class=""> <option  value="10" ng-reflect-value="10">10</option><option  value="25" ng-reflect-value="25">25</option><option  value="50" ng-reflect-value="50">50</option><option  value="100" ng-reflect-value="100">100</option></select> </label>
+                </div>
+                <div  class="table-page-info"><div  aria-live="polite" class="dataTables_info" role="status">records.</div></div>
+                <div  class="dataTables_paginate paging_full_numbers" id="advertiser-details_paginate">
+                  <a  class="paginate_button first disabled" data-dt-idx="0" tabindex="0">First</a>
+                  <a  class="waves-effect waves-light btn paginate_button previous disabled" data-dt-idx="1" tabindex="0">Prev</a>
+                  <span ><a  class="waves-effect waves-light btn paginate_button current" data-dt-idx="2" tabindex="0">1</a></span>
+                  <a  class="waves-effect waves-light btn paginate_button next disabled" data-dt-idx="3" tabindex="0">Next</a>
+                  <a  class="paginate_button last disabled" data-dt-idx="4" tabindex="0">Last</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+   
+<div class="footer" ng-include="'views/common/footer.html'"></div>
+		<script src="assets/js/bootstrap-datepicker.js"></script>	
+
+    <script type="text/javascript">
+			jQuery(function($) {						
+				if(!ace.vars['touch']) {
+					$('.chosen-select').chosen({allow_single_deselect:true}); 
+
+      $('#chosen-multiple-style .btn').on('click', function(e){
+						var target = $(this).find('input[type=radio]');
+						var which = parseInt(target.val());
+						if(which == 2) $('#form-field-select-4').addClass('tag-input-style');
+						 else $('#form-field-select-4').removeClass('tag-input-style');
+					});
+				}
+        //For Data Range Picker
+        $('.input-daterange').datepicker({autoclose:true});		
+  });
+    </script>
+
+  

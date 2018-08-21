@@ -1,0 +1,81 @@
+<div class="top_nav" ng-include="'views/common/top_nav.html'"></div>
+    <div class="container_main">
+      <aside class="container_sidebar" ng-include="'views/common/sidebar.html'">  </aside>
+      <div class="container_body">
+
+        <div class="breadcrumbs">
+						<ul class="breadcrumb">
+							<li> <i class="ace-icon fa fa-home home-icon"></i> Home</li>
+							<li class="active"><a ui-sref="featureList">Manage Feature List</a></li>
+              <li class="active">View Feature List</li>
+						</ul>
+            <div class="add_new">
+              <a ui-sref="featureAdd"><i class="fa fa-pencil"></i> Edit List</a>
+            </div>
+					</div>
+        
+        <div class="content_body">
+          
+    <div id="list-table" class="store_list">
+      <div class="filter_table form-group col-xs-6">
+        <div class="col-xs-9 form-group">
+          <label class="col-xs-3">List Name</label>
+          <div class="col-xs-9"><input type="text" name=""  placeholder="Favorite List" class="form-control" required="" disabled></div>
+        </div>
+        <div class="col-xs-9 form-group">
+          <label class="col-xs-3">City</label>
+          <div class="col-xs-9"><input type="text" name="" placeholder="Chicago" class="form-control" required="" disabled></div>
+        </div>
+      </div>
+      <table  class="list-table display dataTable">
+        <thead >
+          <tr >
+            <th>STORE ID</th>
+            <th>NAME</th>
+            <th>CATEGORY</th>
+            <th>PHONE NUMBER</th>
+            <th>ADDRESS</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr  class="odd">
+            <td>001</td>
+            <td>Manginis Bakery</td>
+            <td>Food</td>
+            <td>0990898767</td>  
+            <td>21-B, Brokery Street</td>  
+          </tr>
+          <tr  class="even">
+            <td>001</td>
+            <td>Manginis Bakery</td>
+            <td>Food</td>
+            <td>0990898767</td>  
+            <td>21-B, Brokery Street</td>
+          </tr> 
+        </tbody>
+      </table>
+      <div  class="bottom">
+        <div  class="tblsubmit"></div>
+        <div  class="pagination-wrapper">
+          <div  class="dataTables_length">
+            <label >Show upto <select  class=""> <option  value="10" ng-reflect-value="10">10</option><option  value="25" ng-reflect-value="25">25</option><option  value="50" ng-reflect-value="50">50</option><option  value="100" ng-reflect-value="100">100</option></select> </label>
+          </div>
+          <div  class="table-page-info"><div  aria-live="polite" class="dataTables_info" role="status">records.</div></div>
+          <div  class="dataTables_paginate paging_full_numbers" id="advertiser-details_paginate">
+            <a  class="paginate_button first disabled" data-dt-idx="0" tabindex="0">First</a>
+            <a  class="waves-effect waves-light btn paginate_button previous disabled" data-dt-idx="1" tabindex="0">Prev</a>
+            <span ><a  class="waves-effect waves-light btn paginate_button current" data-dt-idx="2" tabindex="0">1</a></span>
+            <a  class="waves-effect waves-light btn paginate_button next disabled" data-dt-idx="3" tabindex="0">Next</a>
+            <a  class="paginate_button last disabled" data-dt-idx="4" tabindex="0">Last</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+        </div>
+        
+      </div>
+    </div>
+<div class="footer" ng-include="'views/common/footer.html'"></div>
+    

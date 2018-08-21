@@ -1,0 +1,35 @@
+<div class="top_nav" ng-include="'views/login/top_nav.html'"></div>
+<div class="container_main">
+  <div class="title_page">
+    <img class="logo_img" src="../assets/images/logo_giftbomb.png">
+  </div>
+  <div class="login">
+    <h4 class="login_title">Login</h4>      
+    <div class="space-6"></div>                       
+      <div>
+        <div class="form_ele email">
+          <label class="block clearfix">Email</label>
+          <input type="email" name="email" class="form-control" placeholder="">
+        </div>
+
+        <div class="form_ele password">
+          <label class="block clearfix">Password</label>
+          <input type="password" name="password" class="form-control" placeholder="">
+        </div>
+
+        <div class="form_ele">
+          <label class="inline">
+            <input type="checkbox" id="rememberMe" class="ace">
+            <span class="lbl lbl-rmb">Remember Me </span>
+          </label>
+          <a ui-sref="forgotPassword" class="forgot_password_link">Forgot Password</a>
+        </div>
+
+        <div class="form_ele login_btn"><button class="btn" ui-sref="dashboard">Login</button></div>
+      </div>                        
+  </div>
+</div>
+<div class="footer login_foot">
+ <span class="">Copyright © 2017 Giftbomb Inc. All rights reserved.</span>
+</div>
+

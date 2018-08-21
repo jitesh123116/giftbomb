@@ -1,0 +1,101 @@
+<div class="top_nav" ng-include="'views/common/top_nav.html'"></div>
+<div class="container_main">
+  <aside class="container_sidebar" ng-include="'views/common/sidebar.html'">  </aside>   
+  <div class="container_body">
+    <div class="breadcrumbs">
+				<ul class="breadcrumb">
+					<li> <i class="ace-icon fa fa-home home-icon"></i> Home</li>
+          <li>
+            <a ui-sref="request">View Request Detail</a>
+          </li>
+					<li class="active">Design</li>
+				</ul>
+		</div>
+    
+    <div class="content_body">
+      <div class="branch_add request_design">            
+      <form method="post">
+          <div class="clearfix form-group request_design_controll">
+            <div class="form-group store_name">
+              <label>Store Name</label>
+              <div class="col-xs-9" ><input type="text" class="form-control" disabled ></div>
+            </div>
+            <div class="form-group category">
+              <label>Store Category</label>
+              <div class="col-xs-9" ><input type="text" name="" class="form-control" disabled></div>
+            </div>
+          </div>
+
+          <div class="cardDesign">
+            <div class="cardDetail">
+              <div class="form-group"><h4>CARD DETAIL</h4></div>
+              <div class="clearfix form-group">
+                <div class="col-md-3">
+                  <label><h4>Store Image</h4></label>
+                  <div class="cardDetailCol">
+                    <img src="assets/images/image.jpg" alt="logo">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <label><h4>Store Logo</h4></label>
+                  <div class="cardDetailCol">
+                    <img src="assets/images/image.jpg" alt="logo">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <label><h4>Card</h4></label>
+                  <div class="cardDetailCol">
+                    <img src="assets/images/image.jpg" alt="card">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <label><h4>Font Color</h4></label>
+                  <div class="cardDetailCol">
+                    <div class="colorPicker">
+                      <div  id="flat"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+<!--              <div class="clearfix form-group request_design_controll">
+                <div class="form-group card_amount">
+                  <label>Card Amount</label>
+                  <div class="col-xs-9" ><input type="text" class="form-control"  placeholder="Min." > <input type="text" class="form-control" placeholder="Max." ></div>
+                </div>
+                <div class="form-group increment">
+                  <label>Increments</label>
+                  <div class="col-xs-9" ><input type="text" name="" class="form-control"  placeholder="%"></div>
+                </div>
+              </div>-->
+            </div>
+          </div>
+
+        
+          <div class="clearfix form-group">
+            <div class="col-md-12">
+              <div class="pull-right">
+                <div class="form-group col-md-6">
+                  <button class="btn btn-block">Approve</button>
+                </div>
+                <div class="form-group col-md-6">
+                  <button class="btn btn-block">Decline</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="clear"></div>
+        </form> 
+      </div>   
+    </div>
+  </div>
+</div>
+<div class="footer" ng-include="'views/common/footer.html'"></div>
+    
+<script type="text/javascript">
+  $("#flat").spectrum({
+      preferredFormat: "hex",
+      flat: true,
+      showInput: true
+  });
+</script>

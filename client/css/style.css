@@ -1,126 +1,124 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
+#requstList .filter{
+	position: relative;
+	padding-left: 34px;
+	border: 1px solid #ccc;
+}
 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block; }
+#requstList .filter .filterIcon{
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 34px;
+	width: 34px;
+	background: #ccc;
+	line-height: 34px;
+}
 
-body {
-  line-height: 1; }
+#requstList .filter .filterSelect select{
+	width: 100%;
+	height: 34px;
+	border: none !important; 
+}
 
-ol, ul {
-  list-style: none; }
+.cardDetailCol{
+	border: 1px solid #ddd;
+	text-align: center;
+	padding: 15px;
+}
+.cardDetailCol > img{ width: 100% }
+/*.colorPicker{
+	height: 300px;
+}*/
+.colorPicker .sp-picker-container{
+	width: 100%;
+	box-sizing:border-box;
+}
+.cardDetailCol > h4{
+	font-size: 16px;
+}
+.cardDetailCol > h3 { margin-top: 0;}
+.sp-picker-container, .sp-palette-container{
+	float: none;
+	padding-bottom: 0;
+}
 
-blockquote, q {
-  quotes: none; }
+/*******     SWITCH BUTTON        ***********/
+     
+.tgl {
+  display: none;
+}
+.tgl, .tgl:after, .tgl:before, .tgl *, .tgl *:after, .tgl *:before, .tgl + .tgl-btn {
+  box-sizing: border-box;
+}
+.tgl::-moz-selection, .tgl:after::-moz-selection, .tgl:before::-moz-selection, .tgl *::-moz-selection, .tgl *:after::-moz-selection, .tgl *:before::-moz-selection, .tgl + .tgl-btn::-moz-selection {
+  background: none;
+}
+.tgl::selection, .tgl:after::selection, .tgl:before::selection, .tgl *::selection, .tgl *:after::selection, .tgl *:before::selection, .tgl + .tgl-btn::selection {
+  background: none;
+}
+.tgl + .tgl-btn {
+  outline: 0;
+  display: block;
+  width: 40px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.tgl + .tgl-btn:after, .tgl + .tgl-btn:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+}
+.tgl + .tgl-btn:after {
+  left: 0;
+}
+.tgl + .tgl-btn:before {
+  display: none;
+}
+.tgl:checked + .tgl-btn:after {
+  left: 50%;
+}
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none; }
+.tgl-light + .tgl-btn {
+  background: #f0f0f0;
+  border-radius: 2em;
+  padding: 2px;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+.tgl-light + .tgl-btn:after {
+  border-radius: 50%;
+  background: #fff;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+.tgl-light:checked + .tgl-btn {
+  background: #9FD6AE;
+}
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-/*=====================================
-=            CUSTOM STYLES            =
-=====================================*/
-body {
-  background: #f1f1f1;
-  font: 16px/1.5 Helvetica, Arial, sans-serif; }
-
-.container {
-  overflow: hidden;
-  width: 100%;
-  max-width: 1140px;
-  margin: 0 auto; }
-
-h1, h2, h3, h4, h5, h6, strong {
-  font-weight: 700; }
-
-h1 {
-  font-size: 36px; }
-
-h2 {
-  font-size: 28px; }
-
-h3 {
-  font-size: 22px; }
-
-h4 {
-  font-size: 18px; }
-
-h5 {
-  font-size: 16px; }
-
-h6 {
-  font-size: 14px; }
-
-h1, h2, h3, h4, h5, h6, p {
-  margin: 10px 0; }
-
-ul, ol {
-  margin-left: 20px; }
-
-ul {
-  list-style: disc; }
-
-.content {
-  margin: 20px auto;
-  background: #FFFFFF;
-  border: 1px solid #e6e6e6; }
-  .content #book {
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-    position: relative; }
-  .content .header {
-    background: #607D8B;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.24);
-    color: #ffffff;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.12); }
-    .content .header h1 {
-      margin: 0;
-      padding: 0; }
-    .content .header p {
-      margin: 0;
-      padding: 0;
-      color: #b7c6cd; }
-
-footer.main {
-  text-align: center;
-  margin: 20px auto; }
-  footer.main a {
-    color: #607D8B;
-    text-decoration: none;
-    text-shadow: 0 0 3px transparent;
-    transition: color 0.2s ease-in, text-shadow 0.2s ease-in; }
-    footer.main a:hover {
-      color: #4d90fe;
-      text-shadow: 0 0 3px rgba(77, 144, 254, 0.2); }
-
-/*=====  End of CUSTOM STYLES  ======*/
+.btn {
+  padding: 6px 9px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  float: left;
+  margin-top: 15px;
+  margin-left: 3px;
+  color: #666;
+  background: #f8f8f8;
+  font-size: 12px;
+}
+/*******     SWITCH BUTTON   ENDS     ***********/
+.red{
+	color: #ff0000;
+    font-weight: bold;
+	}
+.new_cb {padding-top: 65px !important;}
+.new_cb .breadcrumbs { height: 47px;}
+/*.new_cb .no_bdcrumb { margin-top: 57px !important}*/

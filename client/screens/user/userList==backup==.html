@@ -1,0 +1,91 @@
+	<div class="breadcrumbs">
+		<ul class="breadcrumb">
+			<li>
+				<i class="ace-icon fa fa-home home-icon"></i>
+				<a href="javascript:void(0);">Home</a>
+			</li>
+			<li class="active">Dashboard</li>
+		</ul>
+		<div class="add_new">
+			<a ui-sref="dashboard.userAdd"><i class="fa fa-plus"></i> Add New User</a>
+		</div>
+	</div>
+	<div class="content_body">
+	  <div id="list-table">
+    <table class="list-table display dataTable">
+      <thead>
+        <tr>
+          <th>S. No.</th>
+          <th>NAME</th>
+          <th>Gender</th>
+          <th>DOB</th>
+          <th>Phone</th>
+          <th>Email ID</th>
+          <th>Status</th>              
+          <th class="action">Action</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr class="odd" dir-paginate="user in userList  | itemsPerPage: params.limit" total-items="count" current-page="current" pagination-id="customerList">
+          <td>{{$index+1}}</td>
+          <td>{{user.username.fname}} {{user.username.lname}}</td>
+          <td>{{user.gender}}</td>
+          <td>{{user.dob | date : format : timezone}}</td>
+          <td>{{user.phoneNumber}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.status}}</td>
+          <td>
+            <a class="action_icon"><i class="fa fa-eye"></i></a>
+            <a ng-click="edit(user)" class="action_icon"><i class="fa fa-pencil"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div  class="bottom">
+      <div  class="tblsubmit"></div>
+      <div  class="pagination-wrapper">
+        
+        <div  class="dataTables_length">
+          <label>Show upto 
+            <select  class="" ng-model="params.limit">
+              <option  value="10" ng-reflect-value="10">10</option>
+              <option  value="25" ng-reflect-value="25">25</option>
+              <option  value="50" ng-reflect-value="50">50</option>
+              <option  value="100" ng-reflect-value="100">100</option>
+            </select> 
+          </label>
+        </div>
+        
+        
+        <dir-pagination-controls pagination-id="customerList"
+			boundary-links="true" 
+                        on-page-change="pageChangeHandler(newPageNumber)"
+			direction-links="true" >
+			</dir-pagination-controls>
+        
+        
+        
+        <!--
+        <dir-pagination-controls pagination-id="customerList" boundary-links="true"  on-page-change="pageChangeHandler(newPageNumber)" template-url="http://localhost:3001/screens/pagination.html" ng-if="userList.length > 0"></dir-pagination-controls>
+        -->
+        
+        
+        <!--
+        <div  class="table-page-info" style="margin-left: -63px;">
+          <div  aria-live="polite" class="dataTables_info" role="status">records.</div>            
+        </div>
+        <div  class="dataTables_paginate paging_full_numbers" id="advertiser-details_paginate">
+          <a  class="paginate_button first disabled" data-dt-idx="0" tabindex="0">First</a>
+          <a  class="waves-effect waves-light btn paginate_button previous disabled" data-dt-idx="1" tabindex="0">Prev</a>
+          <span ><a  class="waves-effect waves-light btn paginate_button current" data-dt-idx="2" tabindex="0">1</a></span>
+          <a  class="waves-effect waves-light btn paginate_button next disabled" data-dt-idx="3" tabindex="0">Next</a>
+          <a  class="paginate_button last disabled" data-dt-idx="4" tabindex="0">Last</a>
+        </div>
+        -->
+        
+      </div>
+    </div>
+            
+  </div>
+</div>
+	

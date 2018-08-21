@@ -1,0 +1,155 @@
+<div class="top_nav" ng-include="'views/common/top_nav.html'"></div>
+<div class="container_main">
+  <aside class="container_sidebar" ng-include="'views/common/sidebar.html'">  </aside>
+  <div class="container_body">
+    
+    <div class="breadcrumbs">
+			<ul class="breadcrumb">
+				<li> <i class="ace-icon fa fa-home home-icon"></i> Home</li>
+				<li class="active">Manage Promotion</li>
+			</ul>
+      <div class="add_new create_promotion">
+          <a ui-sref="branchAdd" href="#/branchAdd"><i class="fa fa-plus"></i> Create Promotion</a>
+        </div>
+		</div>       
+  
+    <div class="content_body">
+      
+      <div id="list-table" class="store_list promotion_list">
+        <div class="tablt_title_cont">
+          <h4 class="tablt_title">Promotions</h4>
+          <div class="form-group export_btn">
+            <button class="">Export <i class="fa fa-share"></i></button>
+          </div>
+        </div>
+        <table  class="list-table display dataTable">
+          <thead >
+            <tr >
+              <th>PROMOTION ID</th>
+              <th>START DATE</th>
+              <th>END DATE</th>
+              <th>PROMOTION NAME</th>
+              <th>ACTUAL VALUE</th>
+              <th>OFFER VALUE</th>
+              <th>CARD SOLD</th>
+              <th>REVENUE EARNED</th>
+            </tr>
+          </thead>
+          <tbody >
+            <tr  class="odd">
+              <td>05</td>
+              <td>11/june/2017</td>
+              <td>22/july/2017</td>
+              <td>Weekend Sale</td>
+              <td>$50</td>            
+              <td>$40</td>
+              <td>90</td>            
+              <td>$700</td>
+            </tr>
+            <tr  class="even">
+              <td>05</td>
+              <td>11/june/2017</td>
+              <td>22/july/2017</td>
+              <td>Weekend Sale</td>
+              <td>$50</td>            
+              <td>$40</td>
+              <td>90</td>            
+              <td>$700</td>
+            </tr>
+
+          </tbody>
+        </table>
+        <div  class="bottom">
+          <div  class="tblsubmit"></div>
+          <div  class="pagination-wrapper">
+            <div  class="dataTables_length">
+              <label ><span>Show upto</span> 
+                <select  class=""> 
+                  <option  value="10" ng-reflect-value="10">10</option>
+                  <option  value="25" ng-reflect-value="25">25</option>
+                  <option  value="50" ng-reflect-value="50">50</option>
+                  <option  value="100" ng-reflect-value="100">100</option>
+                </select> 
+            </label>
+            </div>
+            <div  class="table-page-info"><div  aria-live="polite" class="dataTables_info" role="status">records.</div></div>
+            <div  class="dataTables_paginate paging_full_numbers" id="advertiser-details_paginate">
+              <a  class="paginate_button first disabled" data-dt-idx="0" tabindex="0">First</a>
+              <a  class="waves-effect waves-light btn paginate_button previous disabled" data-dt-idx="1" tabindex="0">Prev</a>
+              <span ><a  class="waves-effect waves-light btn paginate_button current" data-dt-idx="2" tabindex="0">1</a></span>
+              <a  class="waves-effect waves-light btn paginate_button next disabled" data-dt-idx="3" tabindex="0">Next</a>
+              <a  class="paginate_button last disabled" data-dt-idx="4" tabindex="0">Last</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-12 table_note">
+          <P><span><strong>Note:</strong></span>Create a promotion,  5 days in advance to get it approved on time</P>
+        </div>
+		    </div>        
+        </div>
+      </div>
+    </div>
+<div class="footer" ng-include="'views/common/footer.html'"></div>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">PROMOTION DETAIL</h4>
+      </div>
+      <div class="modal-body clearfix creatPromotion">
+        <div class="col-md-12">
+        	<div class="row">
+        		<div class="clearfix form-group">
+               <label class="col-xs-3">Offer Name : </label>
+               <div class="col-xs-9" ><input type="text" class="form-control" ></div>
+            </div>
+
+            <div class="clearfix form-group">
+               <label class="col-xs-3">Original Value : </label>
+               <div class="col-xs-9" ><input type="text" class="form-control" ></div>
+            </div>
+            <div class="clearfix form-group">
+               <label class="col-xs-3">Offer Value : </label>
+               <div class="col-xs-9" ><input type="text" class="form-control" ></div>
+            </div>
+
+            <div class="clearfix form-group">
+               <label class="col-xs-3">Start Date : </label>
+                <div class="col-xs-9" >
+                <div class="input-group date">
+                    <input type="text" class="form-control"/>
+                    <span class="input-group-addon">
+                        <span class="fa fa-calendar"></span>
+                    </span>
+                </div>
+            </div>
+            </div>
+            <div class="clearfix form-group">
+               <label class="col-xs-3">End Date :</label>
+               <div class="col-xs-9" >
+                  <div class="input-group date">
+                      <input type="text" class="form-control" placeholder="Optional" />
+                      <span class="input-group-addon">
+                          <span class="fa fa-calendar"></span>
+                      </span>
+                  </div>
+              </div>
+            </div>          
+          </div>            
+        </div>
+        	
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal">Save</button>
+        <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+      </div>
+      </div>
+      
+    </div>
+
+  </div>

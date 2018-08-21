@@ -1,0 +1,32 @@
+<div class="top_nav" ng-include="'screens/layout/header.html'"></div>
+<aside class="container_sidebar">
+	<ul class="">
+		<li class="" ng-class="getClass('/dashboardstore')"><a ui-sref="dashboard.store"><i class="fa fa-shopping-bag"></i>Stores</a> </li>
+    <li class="" ng-class="getClass('/dashboardredumptions')" ><a ui-sref="dashboard.redumptions"><i class="fa fa-shopping-bag"></i>Redemptions</a> </li>
+		<li class="" ng-class="getClass('/dashboarduser')"><a ui-sref="dashboard.user"><i class="fa fa-users"></i>Users</a> </li>
+		<li class="" ng-class="getClass('/dashboardrequest')"><a ui-sref="dashboard.request"><i class="fa fa-list-alt"></i>Merchant Requests</a> </li>
+		<li class="" ng-class="getClass('/dashboardpromotions')"><a ui-sref="dashboard.promotions"><i class="fa fa-address-card-o"></i>Promotions</a> </li>
+		<li class="" ng-class="getClass('/dashboarduserpayment')"><a ui-sref="dashboard.userPayment"><i class="fa fa-users"></i>Payments</a> </li>
+		<li class="" ng-class="getClass('/dashboardfeature')"><a ui-sref="dashboard.feature"><i class="fa fa-list-ul"></i>Featured Lists</a> </li>
+		<li class="" ng-class="getClass('/dashboardnotifications')"><a ui-sref="dashboard.notifications"><i class="fa fa-address-card-o"></i>Notifications</a> </li>
+		<li class="" ng-class="getClass('/dashboardlocation')"><a ui-sref="dashboard.location"><i class="fa fa-list-ul"></i>Countries &AMP; Cities</a> </li>
+		<li ng-class="(page.id=='1' ) ? 'active' : '' " id="users">
+                <a href="javascript:void(0)"><i class="fa fa-search" aria-hidden="true"></i> User Requests  <b class="arrow fa fa-caret-down"></b></a>
+                <ul id="submenu" style="padding-left:20px">
+                  <li class="" ng-class="getClass('/dashboardsearchRequest')"><a ui-sref="dashboard.searchRequest"><i class="fa fa-list-ul"></i>Stores</a></li>
+                  <li class="" ng-class="getClass('/dashboardsearchCountryRequest')"><a ui-sref="dashboard.searchCountryRequest"><i class="fa fa-list-ul"></i>Countries &AMP; Cities</a></li>
+                </ul>
+            </li>
+	</ul>
+</aside>
+<div class="container_body new_cb">
+	<div ui-view></div>
+</div>
+<div class="footer"> <span class="">Copyright © 2017 Giftbomb Inc. All rights reserved.</span> </div>
+
+<script>
+$(document).ready(function(){
+    $("#users > a").click(function(){
+        $("#submenu").toggle();
+    });
+});</script>

@@ -1,0 +1,91 @@
+<div class="top_nav" ng-include="'views/common/top_nav.html'"></div>
+<aside class="container_sidebar" ng-include="'views/common/sidebar.html'"></aside>   
+<div class="container_main">  
+  <div class="container_body">
+    <div class="breadcrumbs">
+      <h1 class="page_title">Card Design</h1>
+    </div>
+    
+    <div class="content_body">
+      <div class="filter_table form-group col-xs-12">    
+        <!--<button class="export_bttn pull-right" ng-click="" >Edit <i class="fa fa-pencil"></i></button>-->         
+          <label class="export_bttn btn_edit_toggle"><span>Edit <i class="fa fa-pencil"></i></span><input type="checkbox" ng-model="show_action"></label>
+      </div>
+      <div class="branch_add">            
+        <form name="designForm" id="designForm" ng-submit="updateDesignInfo();">
+          <div class="cardDesign manageDesign">
+              <div class="col-md-3 wd3 cardDetailCol_par">
+                <h4>Store Logo</h4>
+                <div class="cardDetailCol store_logo">
+                  <div class="logo_cont">                       
+                    <span ng-if="design.designInfo!==undefined && design.designInfo.storeLogo!==undefined"><img  src="{{BASEURL}}/uploads/request/StoreLogo/{{design.designInfo.storeLogo}}" alt="logo"></span></div>
+                </div>
+                <span class="btn_change_img" ng-show="show_action"><span>Choose image</span><input id="i_file" type="file" name="storeImage" id="storeImage" ng-model="storeImage" ng-upload-change="fileChanged($event)"   accept="image/x-png,image/gif,image/jpeg"></span> 
+              </div>
+              <div class="col-md-6 cardDetailcont">
+               <h4> Background &AMP; Font Color (Gift Card)</h4>
+                <div class="cardDetailCol font_color gift_color">
+                  <p class="change_font_color">This is a dummy font color</p>                  
+                </div>
+                <span class="btn_font_color" data-toggle="modal" data-target="#font_color" ng-show="show_action">Change Font Color</span>                    
+                <span class="btn_change_color" data-toggle="modal" data-target="#card_color" ng-show="show_action"> Change Background Color</span>
+                <span class="btn_restor" ng-show="show_action">Restore Default</span>                    
+              </div>            
+            </div>
+            <div class="ctrl_action" ng-show="show_action">
+             <button class="btn pull-right btn_ok">Save</button>
+             <button class="btn pull-right  btn_cancel">Cancel</button>                
+            </div>
+          <div class="clear"></div>
+        </form>        
+      </div>   
+    </div>
+  </div>
+</div>
+<div class="footer" ng-include="'views/common/footer.html'"></div>
+
+
+
+
+<div id="font_color" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">CHANGE FONT COLOR</h4>
+      </div>
+      <div class="modal-body  creatPromotion">
+	      <div class="colorPicker ">
+          <div  id="flat"></div>
+        </div>
+        <div class="cng_cor_par">
+           <button type="button" class="btn cng_cor" data-dismiss="modal">Save</button>
+         </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="card_color" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">CHANGE GIFT CARD COLOR</h4>
+      </div>
+      <div class="modal-body  creatPromotion">
+	      <div class="colorPicker ">
+          <div  id="gcard"></div>
+        </div>
+        <div class="cng_cor_par">
+           <button type="button"  class="btn cng_cor" data-dismiss="modal">Save</button>
+         </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+

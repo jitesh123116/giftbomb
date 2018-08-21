@@ -1,0 +1,23 @@
+<div class="top_nav" ng-include="'views/login/top_nav.html'"></div>
+<div class="container_main">
+  <div class="title_page">
+    <img class="logo_img" src="public/assets/images/logo_giftbomb.png">
+  </div>
+<div class="login">
+  <h4 class="login_title">Reset Password</h4>      
+  <div class="space-6"></div>                       
+  <form name="resetForm" ng-submit="reset()">
+    <div class="form_ele password">
+      <label class="block clearfix">New Password</label>
+      <input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}" title="Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character" class="form-control" ng-model="user.newPassword" ng-required="true">
+    </div>    
+    <div class="form_ele password">
+      <label class="block clearfix">Confirm Password</label>
+      <input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}" title="Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character" class="form-control" ng-model="user.confirmPassword" ng-required="true">
+    </div>     
+    <div class="form_ele login_btn">
+    	<button class="btn" type="submit">Login</button>
+    </div>
+  </form>                        
+</div>
+</div>

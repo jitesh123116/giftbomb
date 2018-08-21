@@ -1,0 +1,112 @@
+<div class="top_nav" ng-include="'views/common/top_nav.html'"></div>
+    <div class="container_main">
+      <aside class="container_sidebar" ng-include="'views/common/sidebar.html'">  </aside>
+      <div class="container_body">
+
+        <div class="breadcrumbs">
+            <ul class="breadcrumb">
+              <li> <i class="ace-icon fa fa-home home-icon"></i> Home</li>
+              <li class="active">Manage Notification</li>
+            </ul>
+          </div>       
+        <div class="content_body">          
+          <div id="list-table" class="notification">
+            <div class="table_control">                            
+              <div class="form-group export_btn">
+                <button class="create_list" data-toggle="modal" data-target="#notification"><i class="fa fa-plus"></i> Create Notification</button>
+              </div>              
+            </div>
+            <!--<h4 class="tablt_title">Notification List</h4>-->
+            <div class="tablt_title_cont">
+              <h4 class="tablt_title">Notification List</h4>
+            </div>
+            <table  class="list-table display dataTable">
+              <thead >
+                <tr >
+                  <th>S. NO.</th>
+                  <th>NOTIFICATION ID</th>
+                  <th>DELIVERY DATE (& TIME)</th>
+                  <th>MESSAGE</th>                  
+                </tr>
+              </thead>
+              <tbody >
+                <tr  class="odd">
+                  <td>1</td>
+                  <td>010</td>
+                  <td>20-06-17</td>
+                  <td>Monginis ipsum...</td>                  
+                </tr>
+                <tr  class="even">
+                  <td>2</td>
+                  <td>010</td>
+                  <td>23-09-17</td>
+                  <td>Monginis Lorem ipsum...</td>                  
+                </tr>
+                <tr  class="odd">
+                  <td>3</td>
+                  <td>009</td>
+                  <td>15-06-17</td>
+                  <td> Lorem Monginis ipsum...</td>                  
+                </tr>
+              </tbody>
+            </table>
+            <div  class="bottom">
+              <div  class="tblsubmit"></div>
+              <div  class="pagination-wrapper">
+                <div  class="dataTables_length">
+                  <label >Show upto <select  class=""> <option  value="10" ng-reflect-value="10">10</option><option  value="25" ng-reflect-value="25">25</option><option  value="50" ng-reflect-value="50">50</option><option  value="100" ng-reflect-value="100">100</option></select> </label>
+                </div>
+                <div  class="table-page-info"><div  aria-live="polite" class="dataTables_info" role="status">records.</div></div>
+                <div  class="dataTables_paginate paging_full_numbers" id="advertiser-details_paginate">
+                  <a  class="paginate_button first disabled" data-dt-idx="0" tabindex="0">First</a>
+                  <a  class="waves-effect waves-light btn paginate_button previous disabled" data-dt-idx="1" tabindex="0">Prev</a>
+                  <span ><a  class="waves-effect waves-light btn paginate_button current" data-dt-idx="2" tabindex="0">1</a></span>
+                  <a  class="waves-effect waves-light btn paginate_button next disabled" data-dt-idx="3" tabindex="0">Next</a>
+                  <a  class="paginate_button last disabled" data-dt-idx="4" tabindex="0">Last</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        
+      </div>
+    </div>
+<div class="footer" ng-include="'views/common/footer.html'"></div>
+
+<!-- Modal -->
+<div class="modal fade" id="notification" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Create Notification</h4>
+      </div>
+      <div class="modal-body">        
+        <textarea class="" placeholder="Add Description"></textarea>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/bootstrap-datepicker.js"></script> 
+<!--<script type="text/javascript">
+  jQuery(function($) {            
+    if(!ace.vars['touch']) {
+      $('.chosen-select').chosen({allow_single_deselect:true}); 
+
+      $('#chosen-multiple-style .btn').on('click', function(e){
+        var target = $(this).find('input[type=radio]');
+        var which = parseInt(target.val());
+        if(which == 2) $('#form-field-select-4').addClass('tag-input-style');
+         else $('#form-field-select-4').removeClass('tag-input-style');
+      });
+    }
+    //For Data Range Picker
+    $('.input-daterange').datepicker({autoclose:true});   
+});
+</script>-->
+
+  

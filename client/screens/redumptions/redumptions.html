@@ -1,0 +1,86 @@
+<div class="breadcrumbs"> 
+  <h1 class="page_title">Redemptions</h1>
+<!--  <div class="add_new">
+    <a><i class="fa fa-plus"></i> Create Location</a>
+  </div>
+  <div class="add_new">
+    <a><i class="fa fa-plus"></i> Create Store</a>
+  </div>-->
+</div>
+<div class="content_body redump">
+<div id="list-table" class="store_list">
+  <div class="filter_table form-group col-xs-12">
+    <div class="form-group select_location">
+        <label class="">Category</label>
+        <div class="location">
+          <select class="form-control">
+            <option value="">Select one</option> 
+          </select>
+        </div>                
+    </div>
+    <button class="export_bttn pull-right">Export <i class="fa fa-share"></i></button>
+    <div class="search pull-right">
+      <label></label>
+      <input type="text" class="form-control" placeholder="Search Stores" />
+      <i class="fa fa-search"></i>
+    </div>
+  </div>
+  
+  <table  class="list-table display dataTable">
+    <thead >
+      <tr >
+        <th>S. No.</th>
+        <th>Redemption ID</th>
+        <th>Redemption Date</th>
+        <th>Gift Card Number</th>
+        <th>Redeemed Amount</th>
+        <th>Balance Amount</th>
+        <th>Original Amount</th>
+        <th>Purchase Date</th>        
+<!--        <th  class="action">Action</th>-->
+      </tr>
+    </thead>
+    <tbody >
+      <tr>
+        <td>aa</td>
+        <td>aa</td>
+        <td>aa</td>
+        <td>aa</td>
+        <td>aa</td>
+        <td>aa</td>
+        <td>aa</td>
+        <td>$2000</td>        
+<!--        <td>
+          <a class="action_icon">
+            <i class="fa fa-eye"></i>
+          </a>
+          <a class="action_icon">
+            <i class="fa fa-pencil"></i>
+          </a>
+        </td>-->
+      </tr>
+    </tbody>
+  </table>
+  <div class="bottom">
+    <div class="tblsubmit"></div>
+    <div class="pagination-wrapper">
+      <div class="dataTables_length">
+        <label>Show upto <select  class=""> 
+            <option  value="10">10</option>
+            <option  value="25">25</option>
+            <option  value="50">50</option>
+            <option  value="100">100</option>
+          </select> 
+        </label>
+      </div>
+      
+      <dir-pagination-controls pagination-id="storeListID" class="tables_paginate"
+      boundary-links="true" 
+      on-page-change="pageChangeHandler(newPageNumber)"
+      direction-links="true" >
+      </dir-pagination-controls>
+      
+    </div>
+  </div>
+</div>
+</div>

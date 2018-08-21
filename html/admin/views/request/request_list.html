@@ -1,0 +1,148 @@
+<div class="top_nav" ng-include="'views/common/top_nav.html'"></div>
+<div class="container_main">
+      <aside class="container_sidebar" ng-include="'views/common/sidebar.html'">  </aside>
+      <div class="container_body">
+
+        <div class="breadcrumbs">
+			<ul class="breadcrumb">
+				<li> <i class="ace-icon fa fa-home home-icon"></i> Home</li>
+				<li class="active">Manage Requests</li>
+			</ul>
+		</div>       
+    
+        <div class="content_body">
+         	<div id="list-table" class="store_list">            
+            <div class="filter_table form-group col-xs-12" id="requstList">
+              <div class="col-md-4">
+           			<div class="form-group select_location">
+                  <label class="">Select Request Type</label>
+                  <div class="location">
+                    <select class="form-control" id="request_dd">
+                      <option>All</option>	           					
+                      <option value="store_info">Store Info</option>
+                      <option value="payment">Payment</option>
+                      <option value="promotion">Promotions</option>
+                      <option value="design">Design</option>
+	           				</select>
+                  </div>                
+              </div>
+           		</div>  
+<!--              <div class="form-group export_btn">
+                <button class="">Export <i class="fa fa-share"></i></button>
+              </div>-->
+           	</div>
+            <!--<h4 class="tablt_title">Request List</h4>-->
+            <div class="tablt_title_cont">
+              <h4 class="tablt_title">Request List</h4>
+              <div class="form-group export_btn">
+                <button class="">Export <i class="fa fa-share"></i></button>
+              </div>
+            </div>
+		      <table  class="list-table display dataTable store_info">
+		        <thead> <tr>	<th>REQUEST ID</th> <th>STORE ID</th> <th>STORE NAME</th> <th>BRANCH NAME</th> <th>REQUEST TYPE</th> <th  class="action">Action</th> </tr> </thead>
+		        <tbody >
+		          <tr  class="odd"> <td>001</td> <td>003</td> <td>Foodnfood</td> <td>bagnise bakery</td> <td>store info</td>            
+		            <td> <a  class="action_icon" ui-sref="requestStoreInfo"><i  class="fa fa-eye"></i></a> <a  class="action_icon" href="javascript:void(0)"><i  class="fa fa-close"></i></a> <a  class="action_icon" href="javascript:void(0)"><i  class="fa fa-check"></i></a> </td>
+		          </tr>
+		          <tr  class="even"> <td>001</td> <td>003</td> <td>Foodnfood</td> <td>bagnise bakery</td> <td>store info</td>            
+		            <td> <a  class="action_icon" ui-sref="requestStoreInfo"><i  class="fa fa-eye"></i></a> <a  class="action_icon" href="javascript:void(0)"><i  class="fa fa-close"></i></a> <a  class="action_icon" href="javascript:void(0)"><i  class="fa fa-check"></i></a> </td>
+		          </tr>		         
+		        </tbody>
+		      </table>
+          
+          <table  class="list-table display dataTable payment">
+		        <thead> <tr>	<th>REQUEST ID</th> <th>STORE ID</th> <th>STORE NAME</th> <th>BRANCH NAME</th> <th>REQUEST TYPE</th> <th  class="action">Action</th> </tr> </thead>
+		        <tbody >
+		          <tr  class="odd"> <td>001</td> <td>003</td> <td>Foodnfood</td> <td>bagnise bakery</td> <td>payment</td>            
+		            <td> <a  class="action_icon" ui-sref="requestPayment"><i  class="fa fa-eye"></i></a> <a  class="action_icon" href="javascript:void(0)"><i  class="fa fa-close"></i></a> <a  class="action_icon" href="javascript:void(0)"><i  class="fa fa-check"></i></a> </td>
+		          </tr>
+		          <tr  class="even"> <td>001</td> <td>003</td> <td>Foodnfood</td> <td>bagnise bakery</td> <td>payment</td>            
+		            <td> <a  class="action_icon" ui-sref="requestPayment"><i  class="fa fa-eye"></i></a> <a  class="action_icon" href="javascript:void(0)"><i  class="fa fa-close"></i></a> <a  class="action_icon" href="javascript:void(0)"><i  class="fa fa-check"></i></a> </td>
+		          </tr>		         
+		        </tbody>
+		      </table>
+          
+            <table  class="list-table display dataTable promotion">
+		        <thead> <tr>	<th>REQUEST ID</th> <th>STORE ID</th> <th>STORE NAME</th> <th>BRANCH NAME</th> <th>REQUEST TYPE</th> <th  class="action">Action</th> </tr> </thead>
+		        <tbody >
+		          <tr  class="odd"> <td>001</td> <td>003</td> <td>Foodnfood</td> <td>bagnise bakery</td> <td>Promotions</td>            
+		            <td> <a  class="action_icon" ui-sref="requestPromotion"><i  class="fa fa-eye"></i></a> <a  class="action_icon" href="javascript:void(0)"><i  class="fa fa-close"></i></a> <a  class="action_icon" href="javascript:void(0)"><i  class="fa fa-check"></i></a> </td>
+		          </tr>
+		          <tr  class="even"> <td>001</td> <td>003</td> <td>Foodnfood</td> <td>bagnise bakery</td> <td>Promotions</td>            
+		            <td> <a  class="action_icon" ui-sref="requestPromotion"><i  class="fa fa-eye"></i></a> <a  class="action_icon" href="javascript:void(0)"><i  class="fa fa-close"></i></a> <a  class="action_icon" href="javascript:void(0)"><i  class="fa fa-check"></i></a> </td>
+		          </tr>		         
+		        </tbody>
+		      </table>
+            
+            <table  class="list-table display dataTable design">
+		        <thead> <tr>	<th>REQUEST ID</th> <th>STORE ID</th> <th>STORE NAME</th> <th>BRANCH NAME</th> <th>REQUEST TYPE</th> <th  class="action">Action</th> </tr> </thead>
+		        <tbody >
+		          <tr  class="odd"> <td>001</td> <td>003</td> <td>Foodnfood</td> <td>bagnise bakery</td> <td>Design</td>            
+		            <td> <a  class="action_icon" ui-sref="requestDesign"><i  class="fa fa-eye"></i></a> <a  class="action_icon" href="javascript:void(0)"><i  class="fa fa-close"></i></a> <a  class="action_icon" href="javascript:void(0)"><i  class="fa fa-check"></i></a> </td>
+		          </tr>
+		          <tr  class="even"> <td>001</td> <td>003</td> <td>Foodnfood</td> <td>bagnise bakery</td> <td>Design</td>            
+		            <td> <a  class="action_icon" ui-sref="requestDesign"><i  class="fa fa-eye"></i></a> <a  class="action_icon" href="javascript:void(0)"><i  class="fa fa-close"></i></a> <a  class="action_icon" href="javascript:void(0)"><i  class="fa fa-check"></i></a> </td>
+		          </tr>		         
+		        </tbody>
+		      </table>
+            
+		      <div  class="bottom">
+		        <div  class="tblsubmit"></div>
+		        <div  class="pagination-wrapper">
+		          <div  class="dataTables_length">
+		            <label ><span>Show upto</span> 
+		            	<select  class=""> 
+			            	<option  value="10" ng-reflect-value="10">10</option>
+			            	<option  value="25" ng-reflect-value="25">25</option>
+			            	<option  value="50" ng-reflect-value="50">50</option>
+			            	<option  value="100" ng-reflect-value="100">100</option>
+			            </select> 
+			        </label>
+		          </div>
+		          <div  class="table-page-info"><div  aria-live="polite" class="dataTables_info" role="status">records.</div></div>
+		          <div  class="dataTables_paginate paging_full_numbers" id="advertiser-details_paginate">
+		            <a  class="paginate_button first disabled" data-dt-idx="0" tabindex="0">First</a>
+		            <a  class="waves-effect waves-light btn paginate_button previous disabled" data-dt-idx="1" tabindex="0">Prev</a>
+		            <span ><a  class="waves-effect waves-light btn paginate_button current" data-dt-idx="2" tabindex="0">1</a></span>
+		            <a  class="waves-effect waves-light btn paginate_button next disabled" data-dt-idx="3" tabindex="0">Next</a>
+		            <a  class="paginate_button last disabled" data-dt-idx="4" tabindex="0">Last</a>
+		          </div>
+		        </div>
+
+		      </div>
+		    </div>
+        
+
+        </div>
+      </div>
+    </div>
+<div class="footer" ng-include="'views/common/footer.html'"></div>
+
+<script>
+  jQuery(document).ready(function(){
+    jQuery( "#request_dd" )
+  .change(function () {
+    var store_val = jQuery("#request_dd" ).val();
+    if(store_val === "store_info"){
+       jQuery("table").hide();
+       jQuery("table.store_info").show();
+    }
+    if(store_val === "payment"){
+       jQuery("table").hide();
+       jQuery("table.payment").show();
+    }
+    if(store_val === "promotion"){
+       jQuery("table").hide();
+       jQuery("table.promotion").show();
+    }
+    if(store_val === "design"){
+       jQuery("table").hide();
+       jQuery("table.design").show();
+    }    
+  });    
+  });
+
+</script>
+
+
+<!--store_info payment promotion design-->

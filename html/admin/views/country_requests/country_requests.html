@@ -1,0 +1,68 @@
+<div class="top_nav" ng-include="'views/common/top_nav.html'"></div>
+    <div class="container_main">
+      <aside class="container_sidebar" ng-include="'views/common/sidebar.html'">  </aside>
+      <div class="container_body">
+
+        <div class="breadcrumbs">
+						<ul class="breadcrumb">
+							<li> <i class="ace-icon fa fa-home home-icon"></i> Home</li>
+							<li class="active">Country Requests</li>
+						</ul>
+					</div>       
+        <div class="content_body">          
+          <div id="list-table" class="search_request">
+            <div class="tablt_title_cont">
+              <h4 class="tablt_title">Country Request</h4>
+            </div>
+            <table  class="list-table display dataTable">
+              <thead>
+                <tr>
+                  <th>S. No.</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Country</th>
+                  <th>City</th>
+                </tr>
+              </thead>
+              <tbody >
+                <tr  class="odd">
+                  <td>1</td>
+                  <td>Scoop</td>
+                  <td>5</td>
+                  <td>5</td>
+                  <td>5</td>
+                </tr>
+                <tr  class="even">
+                  <td>2</td>
+                  <td>Haldiram</td>
+                  <td>12</td>
+                  <td>12</td>
+                  <td>12</td>
+                </tr>                
+              </tbody>
+            </table>
+            <div  class="bottom">
+              <div  class="tblsubmit"></div>
+              <div  class="pagination-wrapper">
+                <div  class="dataTables_length">
+                  <label >Show upto <select  class=""> <option  value="10" ng-reflect-value="10">10</option><option  value="25" ng-reflect-value="25">25</option><option  value="50" ng-reflect-value="50">50</option><option  value="100" ng-reflect-value="100">100</option></select> </label>
+                </div>
+                <div  class="table-page-info"><div  aria-live="polite" class="dataTables_info" role="status">records.</div></div>
+                <div  class="dataTables_paginate paging_full_numbers" id="advertiser-details_paginate">
+                  <a  class="paginate_button first disabled" data-dt-idx="0" tabindex="0">First</a>
+                  <a  class="waves-effect waves-light btn paginate_button previous disabled" data-dt-idx="1" tabindex="0">Prev</a>
+                  <span ><a  class="waves-effect waves-light btn paginate_button current" data-dt-idx="2" tabindex="0">1</a></span>
+                  <a  class="waves-effect waves-light btn paginate_button next disabled" data-dt-idx="3" tabindex="0">Next</a>
+                  <a  class="paginate_button last disabled" data-dt-idx="4" tabindex="0">Last</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        
+      </div>
+    </div>
+<div class="footer" ng-include="'views/common/footer.html'"></div>
+

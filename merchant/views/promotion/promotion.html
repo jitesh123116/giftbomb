@@ -1,0 +1,242 @@
+<div class="top_nav" ng-include="'views/common/top_nav.html'"></div>
+<aside class="container_sidebar" ng-include="'views/common/sidebar.html'"></aside>
+<div class="container_main">  
+  <div class="container_body">
+    <div class="breadcrumbs">
+      <h1 class="page_title">Promotions</h1>
+      <div class="add_new">
+        <a ui-sref="" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Create Promotion</a>
+      </div>
+		</div> 
+    <div class="content_body no_bdcrumb">
+<!--      <div class="btn_group">
+        <div class="add_new create_promotion">
+          <a ui-sref="" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Create Promotion</a>
+        </div>
+      </div><br><br>        -->         	
+      <div id="list-table" class="store_list promotion_list">
+        <div class="tablt_title_cont">
+          <!--<h4 class="tablt_title">PROMOTION LIST:-</h4>-->
+          <div class="form-group export_btn">
+            <button class="" ng-click="createExcelFile()">Export <i class="fa fa-share"></i></button>
+          </div>
+        </div>
+        <table  class="list-table display dataTable">
+          <thead >
+            <tr >
+              <th>S. No.</th>
+              <th>PROMOTION ID</th>
+              <th>START DATE</th>
+              <th>END DATE</th>
+              <th>PROMOTION NAME</th>
+               <th>ACTUAL VALUE</th>
+              <th>OFFER VALUE</th>
+              <th>CARDS SOLD</th>
+              <th>Sales</th>
+            </tr>
+          </thead>
+          <tbody >
+            
+            <tr dir-paginate="row in promotionList  | itemsPerPage: params.limit" total-items="count" current-page="current" pagination-id="promotionListID">
+              <td>{{$index + 1 +((params.page-1)*params.limit)}}</td>
+              <td>{{row.promotionId}}</td>
+              <td>{{row.startDate |  date:'MM/dd/yyyy' : '+0000'}}</td>
+              <td>{{row.endDate |  date:'MM/dd/yyyy' : '+0000'}}</td>
+              <td>{{row.promotionName}}</td>
+              <td>{{row.originalValue}}</td>            
+              <td>{{row.offerValue}}</td>
+
+              <td>--</td>            
+              <td>--</td>
+            </tr>
+
+          </tbody>
+        </table>
+        <div  class="bottom">
+          <div  class="tblsubmit"></div>
+          <div  class="pagination-wrapper">
+            <div  class="dataTables_length">
+              <label ><span>Show upto</span> 
+                <select  class="" ng-model="params.limit"> 
+                  <option  value="10" ng-reflect-value="10">10</option>
+                  <option  value="25" ng-reflect-value="25">25</option>
+                  <option  value="50" ng-reflect-value="50">50</option>
+                  <option  value="100" ng-reflect-value="100">100</option>
+                </select> 
+            </label>
+            </div>
+            
+            <dir-pagination-controls pagination-id="promotionListID" class="tables_paginate"
+      boundary-links="true" 
+      on-page-change="pageChangeHandler(newPageNumber)"
+      direction-links="true" >
+      </dir-pagination-controls>
+            
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <!--<div class="break_div"></div>-->
+      <div class="breadcrumbs breadcrumbs_1 brcr">
+        <h1 class="page_title">Past Promotions</h1>
+      </div>
+      
+      <div id="list-table" class="store_list promotion_list">
+        <div class="tablt_title_cont">
+          <!--<h4 class="tablt_title">Past Promotions</h4>-->
+          <div class="form-group export_btn"><br><br>
+            <button class="" ng-click="createExcelFile()">Export <i class="fa fa-share"></i></button>
+            <br>
+            <br>
+          </div>
+        </div>
+        <table  class="list-table display dataTable">
+          <thead >
+            <tr >
+              <th>S. No.</th>
+              <th>PROMOTION ID</th>
+              <th>START DATE</th>
+              <th>END DATE</th>
+              <th>PROMOTION NAME</th>
+               <th>ACTUAL VALUE</th>
+              <th>OFFER VALUE</th>
+              <th>CARDS SOLD</th>
+              <th>Sales</th>
+            </tr>
+          </thead>
+          <tbody >
+            
+            <tr dir-paginate="row in promotionList  | itemsPerPage: params.limit" total-items="count" current-page="current" pagination-id="promotionListID">
+              <td>{{$index + 1 +((params.page-1)*params.limit)}}</td>
+              <td>{{row.promotionId}}</td>
+              <td>{{row.startDate |  date:'MM/dd/yyyy' : '+0000'}}</td>
+              <td>{{row.endDate |  date:'MM/dd/yyyy' : '+0000'}}</td>
+              <td>{{row.promotionName}}</td>
+              <td>{{row.originalValue}}</td>            
+              <td>{{row.offerValue}}</td>
+                           
+              
+              
+              <td>--</td>            
+              <td>--</td>
+            </tr>
+
+          </tbody>
+        </table>
+        <div  class="bottom">
+          <div  class="tblsubmit"></div>
+          <div  class="pagination-wrapper">
+            <div  class="dataTables_length">
+              <label ><span>Show upto</span> 
+                <select  class="" ng-model="params.limit"> 
+                  <option  value="10" ng-reflect-value="10">10</option>
+                  <option  value="25" ng-reflect-value="25">25</option>
+                  <option  value="50" ng-reflect-value="50">50</option>
+                  <option  value="100" ng-reflect-value="100">100</option>
+                </select> 
+            </label>
+            </div>
+            
+            <dir-pagination-controls pagination-id="promotionListID" class="tables_paginate"
+      boundary-links="true" 
+      on-page-change="pageChangeHandler(newPageNumber)"
+      direction-links="true" >
+      </dir-pagination-controls>
+            
+          </div>
+        </div>        
+<!--        <div class="col-md-12 table_note">
+          <P><span><strong>Note:</strong></span> Create a promotion,  5 days in advance to get it approved on time.</P>
+        </div>-->
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="footer" ng-include="'views/common/footer.html'"></div>
+<div id="myModal" class="modal fade promotion" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <form  id="promotion_form" name="promotion_form"  ng-submit="saveData();">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Create Promotion</h4>
+        </div>
+        <div class="modal-body clearfix creatPromotion">
+          <h4 class="sub_ttl">Create Promotion</h4>
+          <div class="col-md-12">              
+                <div class="clearfix form-group">
+                   <label class="col-xs-4">Promotion Name : </label>
+                   <div class="col-xs-8" ><input type="text" ng-model="promotion.promotionName" class="form-control" ng-required = "true"></div>
+                </div>
+                <div class="clearfix form-group">
+                   <label class="col-xs-4">Original Value : </label>
+                   <div class="col-xs-8" ><input type="text" ng-model="promotion.originalValue" class="form-control" ng-required = "true"></div>
+                </div>
+                <div class="clearfix form-group">
+                   <label class="col-xs-4">Offer Value : </label>
+                   <div class="col-xs-8" ><input type="text" ng-model="promotion.offerValue" class="form-control" ng-required = "true"></div>
+                </div>                 
+                <div class="clearfix form-group">
+                   <label class="col-xs-4">Start Date : </label>
+                    <div class="col-xs-8" >
+                      <div class="input-group input-daterange">
+                          <input type="text" id="startDate" ng-model="promotion.startDate" class="form-control"  ng-required = "true">
+                          <span class="input-group-addon">
+                            <label for="startDate">  <span class="fa fa-calendar"></span> </label>                            
+                          </span>
+                          <span class="fa fa-info-circle" data-toggle="tooltip" title="As a promotion needs to be approved by Giftbomb, please plan in advance, with a minimum of 5 days from the start date."></span>
+                      </div>
+                    </div>
+                </div>
+                <div class="clearfix form-group">
+                  <label class="col-xs-4">End Date :</label>
+                    <div class="col-xs-8" >
+                      <div class="input-group input-daterange">
+                          <input type="text" id="endDate" ng-model="promotion.endDate"  class="form-control" ng-required = "true">
+                          <span class="input-group-addon">
+                            <label for="endDate">
+                              <span class="fa fa-calendar"></span>
+                            </label>
+                          </span>
+                      </div>
+                    </div>
+                </div>            
+<!--            <div class="clearfix form-group">
+              <div class="col-xs-12 table_note">
+                <p style="font-size: 12px;"><span><strong>Note:</strong></span> As a promotion needs to be approved by Giftbomb, please plan in advance, with a minimum of 5 days from the start date.</p>
+              </div>
+            </div>-->    
+          </div>        	
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn_ok">Save</button>
+          <button type="reset" class="btn btn_cancel" data-dismiss="modal">Cancel</button>
+        </div>
+      </form>  
+    </div> <!-- end modal-content -->      
+  </div>
+</div>
+   <script type="text/javascript">
+   jQuery(function($) {      
+    //datepicker settings     
+    $('.input-daterange').datepicker({
+      todayHighlight: true,
+      autoclose:true,
+      formatDate:'Y/m/d',
+      startDate: '+2d'
+    });  
+    //set tooltip with startdate fields
+    $('[data-toggle="tooltip"]').tooltip(); 
+    //reset model popup
+    $("#myModal").on("hidden.bs.modal",function(){
+      promotion_form.reset();
+    });
+  });
+  </script>
+
+  
+  

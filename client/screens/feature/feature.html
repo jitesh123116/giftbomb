@@ -1,0 +1,89 @@
+<div class="breadcrumbs">
+  <h1 class="page_title">Featured Lists</h1>
+<!--	<ul class="breadcrumb">
+		<li>
+			<i class="ace-icon fa fa-home home-icon"></i>
+			<a href="javascript:void(0);">Home</a>
+		</li>
+		<li class="active">Manage Feature List</li>
+	</ul>	-->
+<div class="add_new">
+    <a ui-sref="dashboard.featureAdd"><i class="fa fa-plus"></i> Create List</a>
+  </div>
+</div>
+<div class="content_body feat_main">
+<div id="list-table" class="store_list featured_list">
+  
+  <div class="filter_table featured_list_filter" >
+    <div class="select_city_flist">
+        <label class="">Select City</label>
+        
+          <select class="form-control" ng-model="city" ng-change="filterData();">
+            <option value="all">All Cities</option>
+            <option ng-repeat="city in cityList" value="{{city}}">{{city}}</option>
+          </select>
+                       
+      </div>
+<!--    <div class="add_new">
+      <a ui-sref="dashboard.featureAdd"><i class="fa fa-plus"></i> Create List</a>
+    </div>-->
+  </div>
+
+<!--  <div class="tablt_title_cont">
+    <h4 class="tablt_title">Featured List</h4>
+  </div>-->
+  <table class="list-table display dataTable">
+    <thead>
+      <tr>
+        <th>S. No.</th>
+        <th>LIST ID</th>
+        <th>LIST NAME</th>
+        <th>CITY</th>
+        <th>NO. OF STORES</th>
+        <th>Start Date</th>
+        <th>END DATE</th>
+        <th class="action">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr dir-paginate="item in featureList  | itemsPerPage: params.limit" total-items="count" current-page="current" pagination-id="featureListID">
+        <td>{{$index + 1 +((params.page-1)*params.limit)}}</td>
+        <td>{{item._id}}</td>
+        <td>{{item.listName}}</td>
+        <td>{{item.city}}</td>
+        <td>{{item.listItem.length}}</td>
+        <td>{{item.startDate |  date:'MM/dd/yyyy h:mm:ss' : '+0000'}}</td>
+        <td>{{item.endDate |  date:'MM/dd/yyyy h:mm:ss' : '+0000'}}</td>            
+        <td>
+          <a class="action_icon" ui-sref="dashboard.featureView({'id':item._id})"><i  class="fa fa-eye"></i></a>
+          <a class="action_icon" ui-sref="dashboard.featureEdit({'id':item._id})"><i class="fa fa-pencil"></i></a>
+          <a class="action_icon" ><i class="fa fa-trash"></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="bottom">
+    <div class="tblsubmit"></div>
+    <div class="pagination-wrapper">
+      <div class="dataTables_length">
+        <label>Show upto 
+          <select  class="" ng-model="params.limit">             
+            <option  value="10" ng-reflect-value="10">10</option>
+            <option  value="25" ng-reflect-value="25">25</option>
+            <option  value="50" ng-reflect-value="50">50</option>
+            <option  value="100" ng-reflect-value="100">100</option>
+          </select> 
+        </label>
+      </div>
+      
+      <dir-pagination-controls pagination-id="featureListID" class="tables_paginate"
+      boundary-links="true" 
+      on-page-change="pageChangeHandler(newPageNumber)"
+      direction-links="true" >
+      </dir-pagination-controls>
+      
+      
+    </div>
+  </div>
+</div>
+</div>

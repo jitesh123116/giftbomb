@@ -1,0 +1,122 @@
+<div class="top_nav" ng-include="'views/common/top_nav.html'"></div>
+    <div class="container_main">
+      <aside class="container_sidebar" ng-include="'views/common/sidebar.html'">  </aside>   
+      <div class="container_body">
+
+        <div class="breadcrumbs">
+						<ul class="breadcrumb">
+							<li> <i class="ace-icon fa fa-home home-icon"></i> Home</li>
+							<li class="active"><a ui-sref="featureList">Manage Feature List</a></li>
+              <li class="active">Edit List</li>
+						</ul>
+					</div>
+        
+        <div class="content_body">
+          <div class="dashboard-view adduser" >
+            
+            <form name="userAddForm" method="post">
+                <div class="form-panel">
+                    <div class="">                      
+                      
+                      <div class="col-xs-9 form-group">
+                        <label class="col-xs-3">List Name</label>
+                        <div class="col-xs-9" ><input type="type" name="" class="form-control" placeholder="Popular Stores in Chicago" required></div>
+                      </div>
+
+                      <div class="form-group col-xs-9">
+                        <label class="col-xs-3" >City</label>
+                        <div class="col-xs-9" >
+                          <select class="form-control" required="">
+                            <option value="">Select City</option>
+                            <option value="">Dallas</option>
+                            <option value="">Chicago</option>
+                            <option value="">Texas</option>
+                            <option value="">Los Angeles</option>
+                          </select>
+                        </div>                
+                      </div>
+<!--                      <div class="form-group col-xs-9">
+                        <label class="col-xs-3" >Select Category</label>
+                        <div class="col-xs-9" >
+                          <select class="form-control" required="">
+                            <option value="">All</option>
+                            <option value="">Food</option>
+                            <option value="">Apparel</option>
+                            <option value="">Groceries</option>
+                            <option value="">Department</option>
+                          </select>
+                        </div>                
+                      </div>-->
+                                            
+                    </div>                    
+                </div>
+              </form> 
+            
+            
+                 
+    <div id="list-table" class="feature_list">
+<!--      <div class="filter_table">
+        <div class="form-group">
+          <label class="" >Select Category</label>
+          <div class="select_category" >
+            <select class="form-control" required="">
+              <option value="">All</option>
+              <option value="">Food</option>
+              <option value="">Apparel</option>
+              <option value="">Groceries</option>
+              <option value="">Department</option>
+            </select>
+          </div>                
+        </div>
+      </div>-->
+      <table  class="list-table display dataTable">
+        <thead >
+          <tr >
+            <!--<th><input type="checkbox" name=""/></th>-->
+            <th>STORE ID</th>
+            <th>STORE NAME</th>
+            <th>STORE CATEGORY</th>
+            <th>E-MAIL</th>
+            <th>PHONE</th>
+            <th>ADDRESS</th>
+            <th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr  class="odd">
+            <!--<td><input type="checkbox" name=""/></td>-->
+            <td>001</td>
+            <td>Monginis Bokery</td>
+            <td>Bokery</td>
+            <td>bokery@gmaill.com</td>
+            <td>0990898767</td>            
+            <td>21-B, Brokery Street</td>
+            <td><a class="action_icon"><i class="fa fa-close"></i></a></td>
+          </tr>
+          <tr  class="even">
+            <!--<td><input type="checkbox" name=""/></td>-->
+            <td>001</td>
+            <td>Monginis Bokery</td>
+            <td>Bokery</td>
+            <td>bokery@gmaill.com</td>
+            <td>0990898767</td>            
+            <td>21-B, Brokery Street</td>
+            <td><a class="action_icon"><i class="fa fa-close"></i></a></td>
+          </tr>
+
+        </tbody>
+      </table>
+      
+      <div class="form-group save_list">
+        <button ui-sref="featureList">Save</button>
+      </div>        
+    </div>
+
+
+          </div>   
+        </div>
+        
+      </div>
+    </div>
+<div class="footer" ng-include="'views/common/footer.html'"></div>
+    

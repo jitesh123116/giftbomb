@@ -1,0 +1,100 @@
+<div class="content_body">
+  <div class="dashboard-view adduser" >
+	  <form name="userAddForm" ng-submit="updateUser()" style="padding-left: 15px;">
+      <a ui-sref="dashboard.user" class="back_btn" href="#/dashboarduser">Back</a>
+	    <div class="form-panel">
+	      <div class="row">
+          <div class="col-xs-9 form-group">
+            <label class="col-xs-3"></label>
+            <div class="col-xs-9" ><h3 class="form_heading">User Edit</h3></div>
+          </div>
+          <div class="col-xs-9 form-group">
+            <label class="col-xs-3">First Name <span class="red">*</span></label>
+            <div class="col-xs-9" >
+              <input type="type" ng-model="user.username.fname" class="form-control" ng-required = "true">
+            </div>
+          </div>
+          <div class="col-xs-9 form-group">
+            <label class="col-xs-3">Last Name <span class="red">*</span></label>
+            <div class="col-xs-9" >
+              <input type="type" ng-model="user.username.lname" class="form-control" ng-required = "true">
+            </div>
+          </div>
+                
+	    <div class="form-group col-xs-9">
+            <label class="col-xs-3">Gender <span class="red">*</span></label>
+            <div class="col-xs-9">
+              <select class="form-control" ng-model="user.gender" ng-required = "true">
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>                
+          </div>
+                
+          
+          <div class="clearfix form-group col-xs-9">
+          <label class="col-xs-3">DOB <span class="red">*</span></label>
+          <div class="col-xs-9" >
+             <div class="input-group input-daterange">
+                  <input type="text" ng-model="user.dob" readonly="readonly" class="form-control date-picker"  ng-required = "true">
+                 <span class="input-group-addon">
+                     <span class="fa fa-calendar"></span>                     
+                 </span>
+             </div>
+          </div>
+          </div>  
+          
+          <div class="col-xs-9 form-group">
+            <label class="col-xs-3">Phone <span class="red">*</span></label>
+            <div class="col-xs-9">
+              <input type="type"  ng-model="user.countryCode" class="col-xs-2" ng-required = "true">
+              <input type="text" ng-model="user.phoneNumber" class="col-xs-10" ng-required = "true">
+            </div>                
+          </div>      
+                
+                
+          <div class="col-xs-9 form-group">
+            <label class="col-xs-3">Email <span class="red">*</span></label>
+            <div class="col-xs-9">
+              <input type="email" ng-model="user.email" class="form-control" ng-required = "true">
+            </div>                
+          </div>
+          <div class="col-xs-9 form-group">
+            <label class="col-xs-3"></label>
+            <div class="col-xs-9">
+              <button type="submit" class="save_btn">Update</button>
+            </div>                
+          </div>
+		    </div>
+	    </div>
+	  </form> 
+	</div>
+</div>
+<script type="text/javascript">
+  jQuery(function($) {
+
+
+     if( !('ace' in window) ) window['ace'] = {}
+       if( !('vars' in window['ace']) ) window['ace'].vars = {}
+       window['ace'].vars['icon'] = ' ace-icon ';
+       window['ace'].vars['.icon'] = '.ace-icon';
+       ace['click_event'] = ace.vars['touch'] && jQuery.fn.tap ? 'tap' : 'click';
+
+   $('.date-picker').datepicker({
+    endDate: '+0d', 
+    autoclose: true,
+    todayHighlight: true,
+    forceParse: false
+   })
+
+   //show datepicker when clicking on the icon
+   .next().on(ace.click_event, function(){
+    $(this).prev().focus();
+   });
+   
+   
+   
+ });
+ </script>

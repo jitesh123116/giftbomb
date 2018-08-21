@@ -1,0 +1,77 @@
+<div class="breadcrumbs">
+  <h1 class="page_title">Users</h1>
+</div>
+  <div class="content_body">
+    <div id="list-table" class="user_list" >      
+<!--      <div class="tablt_title_cont">
+        <h4 class="tablt_title">User List</h4>        
+        <div class="search_box search_box_user">
+          <label>Search User</label>
+          <input type="text" class="form-control" ng-model="searchText" placeholder="Search..."><i ng-click="searchUserData();" class="fa fa-search"></i>
+        </div>
+        <div class="form-group export_btn">
+          <button ng-click="createExcelFile()" class="">Export <i class="fa fa-share"></i></button>
+        </div>
+      </div>  -->
+
+      <div class="filter_table form-group col-xs-12">        
+        <button class="export_bttn pull-right" ng-click="createExcelFile()">Export <i class="fa fa-share"></i></button>
+        <div class="search pull-right">
+          <input type="text" class="form-control" ng-model="searchText" placeholder="Search Users" />
+          <i class="fa fa-search" ng-click="searchStore()"></i>
+        </div>
+      </div>
+
+      <table class="list-table display dataTable">
+        <thead>
+          <tr>
+            <th>S. No.</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>DOB</th>
+            <th>Phone</th>
+            <th>Email</th>              
+            <th class="action">Action</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr class="odd" dir-paginate="user in userList  | itemsPerPage: params.limit" total-items="count" current-page="current" pagination-id="customerList">
+            <td>{{$index+1+((params.page-1)*params.limit)}}</td>
+             <td>{{user.username.fname}}</td>
+            <td>{{user.username.fname}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.dob | date : format : timezone}}</td>
+            <td>{{user.phoneNumber}}</td>
+            <td>{{user.email}}</td>
+            <td>
+              <a class="action_icon" ui-sref="dashboard.userView({'id':user._id})"><i class="fa fa-eye" ></i></a>
+              <!--<a ng-click="edit(user._id)" class="action_icon"><i class="fa fa-pencil"></i></a>-->
+              <a class="action_icon"><i class="fa fa-trash" ng-click="deleteData(user._id);"></i></a>            
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div  class="bottom">
+        <div  class="tblsubmit"></div>
+        <div  class="pagination-wrapper">              
+          <div  class="dataTables_length">
+            <label>Show upto 
+              <select  class="" ng-model="params.limit">                   
+                <option  value="10" ng-reflect-value="10">10</option>
+                <option  value="25" ng-reflect-value="25">25</option>
+                <option  value="50" ng-reflect-value="50">50</option>
+                <option  value="100" ng-reflect-value="100">100</option>
+              </select> 
+            </label>
+          </div>              
+          <dir-pagination-controls class="tables_paginate" pagination-id="customerList" 
+          boundary-links="true" 
+          on-page-change="pageChangeHandler(newPageNumber)"
+          direction-links="true" >
+          </dir-pagination-controls>
+        </div>
+    </div>
+    </div>
+  </div>
+	

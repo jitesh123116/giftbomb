@@ -1,0 +1,88 @@
+    
+    <div class="top_nav" ng-include="'views/common/top_nav.html'"></div>
+
+    <div class="container_main">
+     <aside class="container_sidebar" ng-include="'views/common/sidebar.html'">  </aside>      
+      <div class="container_body">
+
+        <div class="breadcrumbs">
+						<ul class="breadcrumb">
+							<li> <i class="ace-icon fa fa-home home-icon"></i> Home</li>
+							<li class="active">Manage Users</li>
+						</ul>
+						<div class="add_new">	<a href="javascript:void(0);"><i class="fa fa-plus"></i> Add New</a> </div>
+					</div>
+        
+        <div class="content_body">
+          <div class="table_control">
+            <div class="table_filter">
+              <div class="gift_details">
+                <label class="">Gift Details</label>
+                <div class="by_to">
+                  <select class="form-control" required>
+                    <option value="" >Gifted By</option>
+                    <option value="" >Gifted To</option> </select>
+                </div>                
+              </div>
+            </div>
+            <div class="table_export"><a href="javascript:void(0);" class="export_btn">Export <i class="fa fa-share"></i></a></div>
+          </div>
+          <div id="list-table">
+            <table  class="list-table display dataTable">
+              <thead >
+                <tr >
+                  <th>Card Number</th>
+                  <th>Gifted To</th>
+                  <th>Card Amount</th>
+                  <th>Redeemed Amount</th>
+                  <th>Store Name</th>
+                  <th>Store Category</th>              
+                  <th>Gifted Date</th>
+                </tr>
+              </thead>
+              <tbody >
+                <tr  class="even">
+                  <td>98729792</td>
+                  <td>Thomas</td>
+                  <td>$30</td>
+                  <td>$10</td>
+                  <td>Broker Street</td>
+                  <td>Bakery</td>
+                  <td>21-01-2017</td>            
+                </tr>
+                <tr  class="odd">
+                  <td>98729792</td>
+                  <td>Thomas</td>
+                  <td>$30</td>
+                  <td>$10</td>
+                  <td>Broker Street</td>
+                  <td>Bakery</td>
+                  <td>21-01-2017</td>            
+                </tr>
+              </tbody>
+            </table>
+            <div  class="bottom">
+              <div  class="tblsubmit"></div>
+              <div  class="pagination-wrapper">
+                <div  class="dataTables_length">
+                  <label >Show upto <select  class=""> <option  value="10" ng-reflect-value="10">10</option><option  value="25" ng-reflect-value="25">25</option><option  value="50" ng-reflect-value="50">50</option><option  value="100" ng-reflect-value="100">100</option></select> </label>
+                </div>
+                <div  class="table-page-info"><div  aria-live="polite" class="dataTables_info" role="status">records.</div></div>
+                <div  class="dataTables_paginate paging_full_numbers" id="advertiser-details_paginate">
+                  <a  class="paginate_button first disabled" data-dt-idx="0" tabindex="0">First</a>
+                  <a  class="waves-effect waves-light btn paginate_button previous disabled" data-dt-idx="1" tabindex="0">Prev</a>
+                  <span ><a  class="waves-effect waves-light btn paginate_button current" data-dt-idx="2" tabindex="0">1</a></span>
+                  <a  class="waves-effect waves-light btn paginate_button next disabled" data-dt-idx="3" tabindex="0">Next</a>
+                  <a  class="paginate_button last disabled" data-dt-idx="4" tabindex="0">Last</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        
+      </div>
+    </div>
+    <div class="footer" ng-include="'views/common/footer.html'"></div>
+    

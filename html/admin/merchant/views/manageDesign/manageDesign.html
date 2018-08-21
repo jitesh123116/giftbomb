@@ -1,0 +1,195 @@
+<div class="top_nav" ng-include="'views/common/top_nav.html'"></div>
+<div class="container_main">
+  <aside class="container_sidebar" ng-include="'views/common/sidebar.html'">  </aside>   
+  <div class="container_body">
+    <div class="breadcrumbs">
+				<ul class="breadcrumb">
+					<li> <i class="ace-icon fa fa-home home-icon"></i> Home</li>
+          <li class="active">Manage Design</li>
+				</ul>
+		</div>
+    
+    <div class="content_body">
+      <div class="branch_add">            
+      <form method="post">
+<!--          <div class="clearfix form-group card_detail_controll">
+            <div class="col-xs-9 col-md-6">
+              <div class="clearfix">
+                <label class="col-xs-3">Store Name</label>
+                <div class="col-xs-9" ><input type="text" class="form-control" disabled ></div>
+              </div>
+            </div>
+            <div class="col-xs-9 col-md-6">
+              <div class="clearfix">
+                <label class="col-xs-3">Store Category</label>
+                <div class="col-xs-9" ><input type="text" name="" class="form-control" disabled></div>
+            </div>
+            </div>
+          </div>-->
+
+          <div class="cardDesign manageDesign">
+            <div class="cardDetail">
+              
+              <div id="list-table">
+                <div class="tablt_title_cont">
+                  <h4 class="tablt_title">Logo &AMP; Design</h4>                      
+                </div>              
+
+                <div class="form-group"> 
+                  
+                    <div class="col-md-3 wd3">
+                      <label><h4>Store Logo</h4></label>
+                      <div class="cardDetailCol store_logo">
+<!--                        <span class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>-->
+                        <div class="logo_cont"><img src="../assets/images/logo_playdoh.png" alt="logo"></div>
+                      </div>
+                      <span class="btn_change_img"><input type="file" placeholder="Change Logo"></span> 
+                    </div>
+                  
+                  <div class="col-md-3 wd3">
+                      <label><h4>Store Picture</h4></label>
+                      <div class="cardDetailCol store_logo">
+<!--                        <span class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>-->
+                        <div class="logo_cont"><img src="../assets/images/logo_playdoh.png" alt="logo"></div>
+                      </div>
+                      <span class="btn_change_img"><input type="file" placeholder="Change Picture"></span>
+                    </div>
+                  
+                    <div class="col-md-3 wd3">
+                      <label><h4>Background Color (Gift Card)</h4></label>
+                      <div class="cardDetailCol gift_color"> </div>
+                      <span class="btn_change_color" data-toggle="modal" data-target="#card_color"> Change Color</span>
+                    </div>
+
+                    <div class="col-md-3 wd3">
+                      <label> <h4> Font Color (Gift Card)</h4></label>
+                      <div class="cardDetailCol font_color">
+                        <p class="change_font_color">This is a dummy font color</p>
+<!--                        <div class="colorPicker ">
+                          <div  id="flat"></div>
+                        </div>-->
+                      </div>
+                      <span class="btn_font_color" data-toggle="modal" data-target="#font_color">Change Font Color</span>
+                    </div>
+
+              </div>
+                
+                   <div class="form-group">
+            <div class="col-md-12">
+              <div class="pull-right">
+                <div class="form-group col-md-6">
+                  <button class="btn btn-block">Save</button>
+                </div>
+                <div class="form-group col-md-6">
+                  <button class="btn btn-block">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>                
+              </div>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </form> 
+      </div>   
+    </div>
+  </div>
+</div>
+<div class="footer" ng-include="'views/common/footer.html'"></div>
+    
+
+
+<div id="font_color" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">CHANGE FONT COLOR</h4>
+      </div>
+      <div class="modal-body  creatPromotion">
+	      <div class="colorPicker ">
+          <div  id="flat"></div>
+        </div>
+        <div class="cng_cor_par">
+           <button type="button" class="btn cng_cor" data-dismiss="modal">Save</button>
+         </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="card_color" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">CHANGE GIFT CARD COLOR</h4>
+      </div>
+      <div class="modal-body  creatPromotion">
+	      <div class="colorPicker ">
+          <div  id="gcard"></div>
+        </div>
+        <div class="cng_cor_par">
+           <button type="button" class="btn cng_cor" data-dismiss="modal">Save</button>
+         </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!--
+<script type="text/javascript">
+  $("#flat, #gcard").spectrum({
+      preferredFormat: "hex",
+      flat: true,
+      showInput: true
+  });
+</script>
+-->
+
+
+
+<script type="text/javascript">
+  
+  function updateFont(color) {
+    var hexColor = "transparent";
+    if(color) {
+        hexColor = color.toHexString();
+    }
+    $(".change_font_color").css("color", hexColor);
+}
+  function updateBox(color) {
+    var hexColor = "transparent";
+    if(color) {
+        hexColor = color.toHexString();
+    }
+    $(".gift_color").css("background", hexColor);
+}
+
+  $("#flat").spectrum({
+      preferredFormat: "hex",
+      color: "#ECC",
+      flat: true,
+      showInput: true,
+      move: function (color) {
+        updateFont(color);
+    }
+  });
+  
+  $("#gcard").spectrum({
+      preferredFormat: "hex",
+      color: "#ECC",
+      flat: true,
+      showInput: true,
+      move: function (color) {
+        updateBox(color);
+    }
+  });
+</script>
+
+

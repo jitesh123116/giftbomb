@@ -1,0 +1,180 @@
+<div class="top_nav" ng-include="'views/common/top_nav.html'"></div>
+    <div class="container_main">
+      <aside class="container_sidebar" ng-include="'views/common/sidebar.html'">  </aside>
+      <div class="container_body">
+
+        <div class="breadcrumbs">
+						<ul class="breadcrumb">
+							<li> <i class="ace-icon fa fa-home home-icon"></i> Home</li>
+							<li class="active">Location</li>
+						</ul>
+					</div>       
+        <div class="content_body">
+          
+          <div id="list-table" class=" store_list location country">
+            <div class="add_new">
+              <a data-toggle="modal" data-target="#add_country"><i class="fa fa-plus"></i> Add Country</a>
+            </div> 
+            <div class="tablt_title_cont">
+              <h4 class="tablt_title">Country</h4>
+            </div>
+            <table  class="list-table display dataTable">
+              <thead >
+                <tr >
+                  <th>Country Code</th>
+                  <th>Country Name</th>
+                </tr>
+              </thead>
+              <tbody >
+                <tr  class="odd">
+                  <td>09</td>
+                  <td>USA</td>
+                </tr>
+                <tr  class="even">
+                  <td>10</td>
+                  <td>Australia</td>
+                </tr>              
+              </tbody>
+            </table>
+            <div  class="bottom">
+              <div  class="tblsubmit"></div>
+              <div  class="pagination-wrapper">
+                <div  class="dataTables_length">
+                  <label >Show upto <select  class=""> <option  value="10" ng-reflect-value="10">10</option><option  value="25" ng-reflect-value="25">25</option><option  value="50" ng-reflect-value="50">50</option><option  value="100" ng-reflect-value="100">100</option></select> </label>
+                </div>
+                <div  class="table-page-info"><div  aria-live="polite" class="dataTables_info" role="status">records.</div></div>
+                <div  class="dataTables_paginate paging_full_numbers" id="advertiser-details_paginate">
+                  <a  class="paginate_button first disabled" data-dt-idx="0" tabindex="0">First</a>
+                  <a  class="waves-effect waves-light btn paginate_button previous disabled" data-dt-idx="1" tabindex="0">Prev</a>
+                  <span ><a  class="waves-effect waves-light btn paginate_button current" data-dt-idx="2" tabindex="0">1</a></span>
+                  <a  class="waves-effect waves-light btn paginate_button next disabled" data-dt-idx="3" tabindex="0">Next</a>
+                  <a  class="paginate_button last disabled" data-dt-idx="4" tabindex="0">Last</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div id="list-table" class="store_list location city">
+            <div class="add_new">
+              <a data-toggle="modal" data-target="#add_city"><i class="fa fa-plus"></i> Add City</a>
+            </div>
+            <div class="tablt_title_cont">
+              <h4 class="tablt_title">Cities</h4>
+              <div class="city_list">
+                <label>Choose City</label>
+                <select class="form-control" required="">
+                  <option value="">All</option>
+                  <option value="">Alaska</option>
+                  <option value="">Texas</option>
+                </select>
+              </div>
+            </div>
+            <table  class="list-table display dataTable">
+              <thead >
+                <tr>
+                  <th>S. NO.</th>
+                  <th>CITY</th>
+                  <th>ASSOCIATE COUNTRY</th>
+                </tr>
+              </thead>
+              <tbody >
+                <tr  class="odd">
+                  <td>01</td>
+                  <td>Alaska</td>
+                  <td>USA</td>
+                </tr>
+                <tr  class="even">
+                  <td>10</td>
+                  <td>Texas</td>
+                  <td>USA</td>
+                </tr>              
+              </tbody>
+            </table>
+            
+            <div  class="bottom">
+              <div  class="tblsubmit"></div>
+              <div  class="pagination-wrapper">
+                <div  class="dataTables_length">
+                  <label >Show upto <select  class=""> <option  value="10" ng-reflect-value="10">10</option><option  value="25" ng-reflect-value="25">25</option><option  value="50" ng-reflect-value="50">50</option><option  value="100" ng-reflect-value="100">100</option></select> </label>
+                </div>
+                <div  class="table-page-info"><div  aria-live="polite" class="dataTables_info" role="status">records.</div></div>
+                <div  class="dataTables_paginate paging_full_numbers" id="advertiser-details_paginate">
+                  <a  class="paginate_button first disabled" data-dt-idx="0" tabindex="0">First</a>
+                  <a  class="waves-effect waves-light btn paginate_button previous disabled" data-dt-idx="1" tabindex="0">Prev</a>
+                  <span ><a  class="waves-effect waves-light btn paginate_button current" data-dt-idx="2" tabindex="0">1</a></span>
+                  <a  class="waves-effect waves-light btn paginate_button next disabled" data-dt-idx="3" tabindex="0">Next</a>
+                  <a  class="paginate_button last disabled" data-dt-idx="4" tabindex="0">Last</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+      </div>
+    </div>
+<div class="footer" ng-include="'views/common/footer.html'"></div>
+
+<!-- Modal -->
+<div class="modal fade" id="add_city" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Add City</h4>
+      </div>
+      <div class="modal-body">        
+        <form>
+          <div class="col-xs-12 form-group" >
+              <label class="col-xs-3">City Name</label>
+              <div class="col-xs-9"><input type="text" name="" class="form-control" required=""></div>
+            </div>
+           <div class="col-xs-12 form-group">
+              <label class="col-xs-3">Country</label>
+              <div class="col-xs-9">
+                <select class="form-control" required="" placeholder="Select Country">
+                  <option value="">Select Country</option>
+                  <option value="">India</option>
+                  <option value="">USA</option>
+                </select>
+              </div>
+            </div>
+          <div class="col-xs-12 form-group">
+              <label class="col-xs-3"></label>
+              <div class="col-xs-9"><button type="button" class="btn btn-default" data-dismiss="modal">Save</button> <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button></div>
+            </div>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="add_country" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Add Country</h4>
+      </div>
+      <div class="modal-body">        
+        <form>
+          <div class="col-xs-12 form-group">
+              <label class="col-xs-3">Country Code</label>
+              <div class="col-xs-9"><input type="text" name="" class="form-control" required=""></div>
+            </div>
+          <div class="col-xs-12 form-group">
+              <label class="col-xs-3">Country Name</label>
+              <div class="col-xs-9"><input type="text" name="" class="form-control" required=""></div>
+            </div>
+           
+          <div class="col-xs-12 form-group">
+              <label class="col-xs-3"></label>
+              <div class="col-xs-9"><button type="button" class="btn btn-default" data-dismiss="modal">Save</button> <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button></div>
+              
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

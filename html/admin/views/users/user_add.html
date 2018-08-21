@@ -1,0 +1,203 @@
+<div class="top_nav" ng-include="'views/common/top_nav.html'"></div>
+    <div class="container_main">
+      <aside class="container_sidebar" ng-include="'views/common/sidebar.html'">  </aside>   
+      <div class="container_body">
+
+        <div class="breadcrumbs">
+						<ul class="breadcrumb">
+							<li> <i class="ace-icon fa fa-home home-icon"></i> Home</li>
+              <li class="active"><a ui-sref="userList">Manage Users</a></li>
+              <li class="active">Card List</li>
+						</ul>
+<!--						<div class="add_new">	<a href="javascript:void(0);"><i class="fa fa-plus"></i> Add New</a> </div>-->
+					</div>
+        
+        <div class="content_body">
+          <div class="dashboard-view adduser" >
+            <form name="userAddForm" method="post">
+                <div class="form-panel">
+                    <div class="row">
+                      <div class="col-xs-9 form-group">
+                        <label class="col-xs-3"></label>
+                        <div class="col-xs-9" ><h3 class="form_heading">User Information</h3></div>
+                      </div>
+                      
+                      <div class="col-xs-9 form-group">
+                        <label class="col-xs-3">User Name</label>
+                        <div class="col-xs-9" ><input type="type" name="" class="form-control" required></div>
+                      </div>
+
+                      <div class="form-group col-xs-9">
+                        <label class="col-xs-3" >Gender</label>
+                        <div class="col-xs-9" >
+                          <select class="form-control" required>
+                            <option value="" >Male</option>
+                            <option value="" >Female</option>
+                            <option value="" >Other</option></select>
+                        </div>                
+                      </div>
+
+                      <div class="col-xs-9 form-group">
+                        <label class="col-xs-3">DOB</label>
+                        <div class="col-xs-9" ><input type="type" name="" class="form-control" required></div>                
+                      </div>
+                      
+                      <div class="col-xs-9 form-group">
+                        <label class="col-xs-3">Email</label>
+                        <div class="col-xs-9" ><input type="type" name="" class="form-control" required></div>                
+                      </div>
+
+                      <div class="col-xs-9 form-group">
+                        <label class="col-xs-3">Phone</label>
+                        <div class="col-xs-9" ><input type="type" name="" class="form-control" required></div>                
+                      </div>
+                     
+                      
+<!--                      <div class="col-xs-9 form-group">
+                        <label class="col-xs-3"></label>
+                        <div class="col-xs-9" > <button type="submit" class="save_btn">Save</button> </div>
+                      </div>-->
+                    </div>                    
+                </div><br>
+              </form> 
+
+            
+            
+            
+            
+            
+             <div class="table_control">
+            <div class="table_filter">
+              <div class="gift_details">
+                <label class="">Gift Details</label>
+                <div class="by_to">
+                  <select class="form-control" required id="gifted_by_to">
+                    <option value="gifted_by" >Gifted By</option>
+                    <option value="gifted_to" >Gifted To</option> </select>
+                </div>                
+              </div>
+            </div>
+            <!--<div class="table_export"><a href="javascript:void(0);" class="export_btn">Export <i class="fa fa-share"></i></a></div>-->
+          </div>
+          <div id="list-table">
+            <div class="tablt_title_cont">
+              <h4 class="tablt_title">Gift Cards List</h4>
+              <div class="form-group export_btn">
+                <button class="">Export <i class="fa fa-share"></i></button>
+              </div>
+            </div>
+            <table  class="list-table display dataTable gifted_tot">
+              <thead >
+                <tr >
+                  <th>Card Number</th>
+                  <th>Gifted To</th>
+                  <th>Card Amount</th>
+                  <th>Redeemed Amount</th>
+                  <th>Store Name</th>
+                  <th>Store Category</th>              
+                  <th>Gifted Date</th>
+                </tr>
+              </thead>
+              <tbody >
+                <tr  class="even">
+                  <td>98729792</td>
+                  <td>Thomas</td>
+                  <td>$30</td>
+                  <td>$10</td>
+                  <td>Broker Street</td>
+                  <td>Bakery</td>
+                  <td>21-01-2017</td>            
+                </tr>
+                <tr  class="odd">
+                  <td>56544324</td>
+                  <td>Donna</td>
+                  <td>$100</td>
+                  <td>$80</td>
+                  <td>Jiny and Jony</td>
+                  <td>Apparel</td>
+                  <td>21-02-2017</td>            
+                </tr>
+              </tbody>
+            </table>
+                        
+            <table  class="list-table display dataTable gifted_byt">
+              <thead >
+                <tr >
+                  <th>Card Number</th>
+                  <th>Gifted By</th>
+                  <th>Card Amount</th>
+                  <th>Redeemed Amount</th>
+                  <th>Store Name</th>
+                  <th>Store Category</th>              
+                  <th>Gifted Date</th>
+                </tr>
+              </thead>
+              <tbody >
+                <tr  class="even">
+                  <td>24511786</td>
+                  <td>Rachel</td>
+                  <td>$50</td>
+                  <td>$10</td>
+                  <td>Randy Labs   </td>
+                  <td>General</td>
+                  <td>22-01-2017</td>            
+                </tr>
+                <tr  class="odd">
+                  <td>25439876</td>
+                  <td>Hermaine</td>
+                  <td>$100</td>
+                  <td>$80</td>
+                  <td>D J Cloths</td>
+                  <td>Apparel</td>
+                  <td>24-02-2017</td>            
+                </tr>
+              </tbody>
+            </table>
+            <div  class="bottom">
+              <div  class="tblsubmit"></div>
+              <div  class="pagination-wrapper">
+                <div  class="dataTables_length">
+                  <label >Show upto <select  class=""> <option  value="10" ng-reflect-value="10">10</option><option  value="25" ng-reflect-value="25">25</option><option  value="50" ng-reflect-value="50">50</option><option  value="100" ng-reflect-value="100">100</option></select> </label>
+                </div>
+                <div  class="table-page-info"><div  aria-live="polite" class="dataTables_info" role="status">records.</div></div>
+                <div  class="dataTables_paginate paging_full_numbers" id="advertiser-details_paginate">
+                  <a  class="paginate_button first disabled" data-dt-idx="0" tabindex="0">First</a>
+                  <a  class="waves-effect waves-light btn paginate_button previous disabled" data-dt-idx="1" tabindex="0">Prev</a>
+                  <span ><a  class="waves-effect waves-light btn paginate_button current" data-dt-idx="2" tabindex="0">1</a></span>
+                  <a  class="waves-effect waves-light btn paginate_button next disabled" data-dt-idx="3" tabindex="0">Next</a>
+                  <a  class="paginate_button last disabled" data-dt-idx="4" tabindex="0">Last</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          </div>   
+        </div>
+        
+      </div>
+    </div>
+<div class="footer" ng-include="'views/common/footer.html'"></div>
+    
+
+<script>
+  jQuery(document).ready(function(){
+    jQuery( "select#gifted_by_to" )
+  .change(function () {
+    var gifted_to = jQuery("select#gifted_by_to" ).val();
+    if(gifted_to === "gifted_to"){
+       $("table.gifted_byt").hide();
+       $("table.gifted_tot").show();
+    }
+    if(gifted_to === "gifted_by"){
+       $("table.gifted_tot").hide();
+       $("table.gifted_byt").show();
+       
+    }
+    
+   // var dd = $( "select#gifted_by_to" ).val();
+   // alert(dd);
+  });    
+  });
+
+</script>

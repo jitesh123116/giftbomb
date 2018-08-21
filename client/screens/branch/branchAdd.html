@@ -1,0 +1,207 @@
+<a ui-sref="dashboard.store" class="back_btn out bot" href="#/dashboardstore">Back</a>
+<div class="breadcrumbs">
+  <h1 class="page_title">Create Location</h1>
+	<ul class="breadcrumb">
+		<li>
+			<i class="ace-icon fa fa-home home-icon"></i>
+			<a href="javascript:void(0);">Home</a>
+		</li>
+		<li class="active"> <a ui-sref="storeList">Manage Store</a></li>
+		<li class="active">Create New Branch</li>
+	</ul>
+</div>
+
+<div class="content_body">
+	<div class="branch_add">
+
+		<div class="search pull-right">
+			<input id="search" ng-model="search" ng-keyup="setSerachData();" autofocus type="text" name="search" placeholder="Search Store" /><i class="fa fa-search"></i>
+		</div><br>
+
+		<form name="userAddForm" ng-submit="createBranch()">
+      
+      <h4 class="sub_ttl">Store Information</h4>
+			<div class="col-xs-6 form-group">
+				<label class="col-xs-4">Store Name :  </label>
+				<div class="col-xs-8">
+					<b>{{store.accountInfo.storeName}}</b>
+				</div>
+			</div>
+			<div class="col-xs-6 form-group">
+				<label class="col-xs-4">Category : </label>
+				<div class="col-xs-8">
+					<b>{{store.accountInfo.category}}</b>
+				</div>
+			</div>
+      <div class="col-xs-6 form-group">
+				<label class="col-xs-4">Country  :</label>
+				<div class="col-xs-8">
+					<b> {{store.accountInfo.country}}</b>
+				</div>
+			</div>
+			<div class="col-xs-6 form-group">
+				<label class="col-xs-4">Website : </label>
+				<div class="col-xs-8">
+					<b>{{store.accountInfo.website}}</b>
+				</div>
+			</div>
+      <div class="col-xs-6 form-group">
+				<label class="col-xs-4">Logo : </label>
+				<div class="col-xs-8">
+					<b></b>
+				</div>
+			</div>
+      <div class="col-xs-6 form-group">
+				<label class="col-xs-4">Image : </label>
+				<div class="col-xs-8">
+					<b></b>
+				</div>
+			</div>
+      
+      <hr class="" />
+      
+      <h4 class="sub_ttl">Account Information</h4>
+      
+      <div class="col-xs-12 form-group">
+				<label class="col-xs-4" style="width: 16%">Description : </label>
+				<div class="col-xs-8">
+					<b> {{store.accountInfo.description}}</b>
+				</div>
+			</div>
+      
+      <div class="col-xs-12 form-group">
+				<label class="col-xs-4" style="width: 16%">Verification Code : </label>
+				<div class="col-xs-8">
+					<b>{{store.storeId}}</b>
+				</div>
+			</div>
+
+			<hr class="" />
+
+			<h4 class="sub_ttl">Contact Details</h4>
+
+			<div class="col-xs-6 form-group">
+				<label class="col-xs-4">First name :</label>
+				<div class="col-xs-8">
+					<input type="text" ng-model="store.contactInfo.firstName" class="form-control" disabled>
+				</div>
+			</div>
+
+			<div class="col-xs-6 form-group">
+				<label class="col-xs-4">Last name :</label>
+				<div class="col-xs-8">
+					<input type="text" ng-model="store.contactInfo.lastName" class="form-control" disabled>
+				</div>
+			</div>
+
+			<div class="col-xs-6 form-group">
+				<label class="col-xs-4">Phone :</label>
+				<div class="col-xs-8">
+					<input type="text" ng-model="store.contactInfo.contactNumber" class="form-control" disabled>
+				</div>
+			</div>
+			<div class="col-xs-6 form-group">
+				<label class="col-xs-4">Email :</label>
+				<div class="col-xs-8">
+					<input type="text" ng-model="store.contactInfo.email" class="form-control" disabled>
+				</div>
+			</div>
+			<hr class="" />
+
+			<h4 class="sub_ttl">Bank Account Information</h4>
+			
+			<div class="col-xs-6 form-group">
+				<label class="col-xs-4">Account Number :</label>
+				<div class="col-xs-8">
+					<input type="text" name="" class="form-control" disabled>
+				</div>
+			</div>
+			<div class="col-xs-6 form-group">
+				<label class="col-xs-4">Routing Number :</label>
+				<div class="col-xs-8">
+					<input type="text" name="" class="form-control" disabled>
+				</div>
+			</div>
+      <div class="col-xs-6 form-group">
+				<label class="col-xs-4">Name on the Account :</label>
+				<div class="col-xs-8">
+					<input type="text" name="" class="form-control" disabled>
+				</div>
+			</div>
+			<div class="col-xs-6 form-group">
+				<label class="col-xs-4">Bank Address :</label>
+				<div class="col-xs-8">
+					<input type="text" name="" class="form-control" disabled>
+				</div>
+			</div>
+
+			<hr class="" />
+			<h4 class="sub_ttl">Location Information</h4>
+			<div class="col-xs-6 form-group">
+				<label class="col-xs-4">Location Name : <span class="red">*</span></label>
+				<div class="col-xs-8">
+					<input type="text" ng-model="branch.locationName" class="form-control" ng-required="true">
+				</div>
+			</div>
+			<div class="col-xs-6 form-group">
+				<label class="col-xs-4">Phone : <span class="red">*</span></label>
+				<div class="col-xs-8">
+					<input type="text" ng-model="branch.phoneNumber" class="form-control" ng-required="true">
+				</div>
+			</div>
+			<div class="col-xs-6 form-group">
+				<label class="col-xs-4">Address : <span class="red">*</span></label>
+				<div class="col-xs-8">
+					<input type="text" ng-model="branch.address" class="form-control" ng-required="true">
+				</div>
+			</div>
+			<div class="col-xs-6 form-group">
+				<label class="col-xs-4">Zip Code : <span class="red">*</span></label>
+				<div class="col-xs-8">
+					<input type="text" ng-model="branch.pincode" class="form-control" ng-required="true">
+				</div>
+			</div>
+
+			<div class="col-xs-6 form-group">
+				<label class="col-xs-4">City : <span class="red">*</span></label>
+				<div class="col-xs-8">
+					<select class="form-control" ng-options="ct as ct for ct in cityList" ng-model="branch.city" ng-required="true">
+						<option value="">Select City</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="col-xs-6 form-group">
+				<label class="col-xs-4">State : <span class="red">*</span></label>
+				<div class="col-xs-8">
+					<input type="text" ng-model="branch.state" class="form-control" ng-required="true">
+				</div>
+			</div>
+
+      <div class="col-xs-6 form-group">
+				<label class="col-xs-4">Latitude : <span class="red">*</span></label>
+				<div class="col-xs-8">
+					<input type="text" ng-model="branch.lon" class="form-control" ng-required="true">
+				</div>
+			</div>
+			<div class="col-xs-6 form-group">
+				<label class="col-xs-4">Longitude : <span class="red">*</span></label>
+				<div class="col-xs-8">
+					<input type="text" ng-model="branch.lat" class="form-control" ng-required="true">
+				</div>
+			</div>
+
+			<div class="col-xs-12 form-group">
+      <label class="col-xs-6"></label>
+      <div class="col-xs-6" style="padding-left: 19%;"> 
+        <div style="width: 300px;">
+        <button class="save_btn pull-right btn_ok" type="submit" style="margin-right: 0;">Save</button> 
+        <button class="cancel_btn pull-right btn_cancel" ui-sref="storeList" >Cancel</button>
+        </div>
+      </div>
+    </div>
+      
+			<div class="clear"></div>
+		</form>
+	</div>
+</div>

@@ -1,33 +1,87 @@
 app.controller('storeCtrl', function($scope,constantUrl,servercalls,$state,$rootScope,toastr,$window){
   
+  $scope.storeList = {};
+  $scope.categoryList = {};
   $scope.searchText = '';
-
- 
-
-$scope.annotations = (function() {
-  if(window.localStorage) {
-      var annotations = JSON.parse(localStorage.getItem("annotations"));
-    console.log(annotations,"annotation")
-      if( !annotations || annotations.length == 0 ) {
-          window.localStorage.setItem("annotations", JSON.stringify(defaultAnnotations));
-          return defaultAnnotations;
-      }
-      return annotations;
-  } else {
-      return [];
-  }
-})();
- 
-      console.log("store");  
+  $scope.category ='';
+  $scope.BASEURL = constantUrl.BASE_URL; 
+  $scope.current = 1;  
+  $scope.params = {
+      page : 1,
+      limit: "10"
+  };      
         
-      servercalls.anootationShow($scope.annotations);
+        
+        
 
-
-
+$scope.getAllStores = function(){
+   console.log("getAllStores");
+   console.log("params",$scope.params);
+  servercalls.getData('/store/'+$scope.category, $scope.params, function(err, data){
+         // console.log("storeList ",stores);
+          if(data.status.status == 200){                    
+            $scope.storeList = data.data['rows'];
+            $scope.count = data.data['totalRows'];
+          }else{
+            toastr.error("can't get store list");
+          }
+  })
+}
+$scope.getAllStores();
+        
+	// get store categories
+	$scope.getStoreCategories = function(){
+		servercalls.getData('/store/categories', {}, function(err, cat){
+			if(cat.status.status == 200){
+				$scope.categoryList = cat.data;
+			}else{
+				toastr.error("can't get store list");
+			}
+		})
+	}
+	$scope.getStoreCategories();
 	
         
         
-
+        
+        
+	$scope.edit = function(store){
+		$state.go('dashboard.userEdit',{'stores':store});
+	}
+        
+        
+  /**
+  * get paging content
+  */
+  $scope.pageChangeHandler = function(pageNumber) {
+      console.log("pageNumber", pageNumber); 
+      if (pageNumber) {
+          $scope.params.page = pageNumber;
+          $scope.getAllStores();
+      }
+  }
+  
+  /**
+   *@getCategoryWiseStore 
+   */
+  $scope.getCategoryWiseStore = function(){
+    console.log("getCategoryWiseStore");
+    $scope.current = 1;
+    $scope.params.page = 1;
+    $scope.getAllStores();
+  }
+  
+  /**
+   *@searchStore 
+   */
+  $scope.searchStore = function(){
+    console.log("searchStore",$scope.searchText);
+    $scope.params.search = $scope.searchText;
+    $scope.current = 1;
+    $scope.params.page = 1;
+    $scope.getAllStores();
+  }
+  
   
   /**
   *@createExcelFile method is for exporting users data in excel file 

@@ -1,0 +1,133 @@
+<!--<div class="height_58"></div>-->
+<a ui-sref="dashboard.feature" class="back_btn out" href="#/dashboardfeature">Back</a>
+<div class="content_body feat_edit">
+<div class="dashboard-view adduser" >
+  <!--<a ui-sref="dashboard.feature" class="back_btn mleft_20" href="#/dashboardfeature">Back</a><br><br>-->
+  <form name="userAddForm" ng-submit="addOrUpdateList()">
+    <div class="form-panel">
+      <div class="col-xs-12">
+        
+<!--        <div class="tablt_title_cont">             
+            <div class="form-group export_btn">
+              <button class=""  ng-model="show_tbl">Edit <i class="fa fa-pencil"></i></button>
+            </div>
+          </div>-->
+
+        <div class="form-group col-xs-6">
+          <label class="col-xs-4" >Select City :<span class="red">*</span></label>
+          <div class="col-xs-8" >
+            <select class="form-control" ng-options="ct as ct for ct in cityList" ng-model="list.city" ng-change="getFilterBranch()">
+              <option value="">All Cities</option>
+            </select>
+          </div>                
+        </div>
+        
+<!--        <div class="form-group col-xs-6">
+          <label class="col-xs-4" >Select Category :</label>
+          <div class="col-xs-8" >
+            <select class="form-control" ng-options="cat as cat for cat in categoryList" ng-model="category" ng-change="getFilterBranch()">
+              <option value="">Select One</option>
+            </select>
+          </div>                
+        </div>-->
+        
+        <div class="clearfix form-group col-xs-6">
+          <label class="col-xs-4">Start Date : <span class="red">*</span></label>
+          <div class="col-xs-8" >
+             <div class="input-group input-daterange fa fa-calendar">
+                  <input id="date-timepicker1" type="text" timepicker ng-model="list.startDate"  class="form-control date-picker"  required/>
+                 <span class="input-group-addon">
+                     <span class="fa fa-calendar"></span>                     
+                 </span>
+             </div>
+         </div>
+        </div>
+        
+        <div class="clearfix form-group col-xs-6">
+          <label class="col-xs-4">End Date :</label>
+          <div class="col-xs-8" >
+              <div class="input-group input-daterange fa fa-calendar">
+                  <input id="date-timepicker2" type="text" timepicker ng-model="list.endDate"  class="form-control date-picker" placeholder="Optional" />
+                  <span class="input-group-addon">
+                      <span class="fa fa-calendar"></span>
+                  </span>
+              </div>
+          </div>
+        </div>
+        
+        <div class="col-xs-6 form-group">
+          <label class="col-xs-4">List Name : <span class="red">*</span></label>
+          <div class="col-xs-8">
+            <input type="type" ng-model="list.listName" class="form-control" required>
+          </div>
+        </div>
+        
+      </div>                    
+    </div>
+    <!--ng-show="show_tbl"-->
+    <div id="list-table" class="store_list feature_list" >      
+      <div class="filter_table form-group col-xs-6">        
+      </div>
+      <table class="list-table display dataTable">
+        <thead>
+          <tr>
+            <th></th>
+            <th>S. NO.</th>
+            <th>STORE ID</th>
+            <th>STORE NAME</th>
+            <th>CATEGORY</th>
+            <th  class="action">Action</th>
+<!--            <th>E-MAIL</th>
+            <th>PHONE</th>
+            <th>ADDRESS</th>-->
+          </tr>
+        </thead>
+        <tbody >
+          <tr dir-paginate="branch in branchList  | itemsPerPage: params.limit" total-items="count" current-page="current" pagination-id="featureADDID">
+            <td><input type="checkbox" ng-model="list.itemList[branch._id]" ng-checked="checkedArray[branch._id]" name="{{branch._id}}" class="branchId" value="{{branch._id}}" ></td>
+            <td>1</td>
+            <td>{{branch.branchId}}</td>
+            <td>{{branch.storeId.accountInfo.storeName}}</td>
+            <td>{{branch.storeId.accountInfo.category}}</td>
+            <td> <a class="action_icon"> <i class="fa fa-trash"></i> </a> </td>
+<!--        <td>{{branch.storeId.contactInfo.email}}</td>
+            <td>{{branch.phoneNumber}}</td>        
+            <td>{{branch.address}}</td>  -->
+          </tr>
+        </tbody>
+      </table>
+      <div class="bottom">
+        <div class="tblsubmit"></div>
+        <div class="pagination-wrapper">
+          <div class="dataTables_length">
+            <label>Show upto 
+              <select  class="" ng-model="params.limit"> 
+                <option  value="10" ng-reflect-value="10">10</option>
+                <option  value="25" ng-reflect-value="25">25</option>
+                <option  value="50" ng-reflect-value="50">50</option>
+                <option  value="100" ng-reflect-value="100">100</option>
+              </select> 
+            </label>
+          </div>
+          
+          <dir-pagination-controls pagination-id="featureADDID" tables_paginate class="tables_paginate"
+      boundary-links="true" 
+      on-page-change="pageChangeHandler(newPageNumber)"
+      direction-links="true" >
+      </dir-pagination-controls>
+          
+          
+        </div>
+      </div>
+      
+      <div class="form-group save_list save_list_flist">
+       <button class="save_btn btn_ok" type="submit">Save</button> 
+        <button class="cancel_btn btn_cancel" ui-sref="dashboard.feature">Cancel</button>
+      </div>
+      
+    </div>
+
+  </form> 
+
+</div> 
+</div>

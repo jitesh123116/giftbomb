@@ -1,0 +1,122 @@
+<div class="top_nav" ng-include="'views/common/top_nav.html'"></div>
+    <div class="container_main">
+      <aside class="container_sidebar" ng-include="'views/common/sidebar.html'">  </aside>
+      <div class="container_body">
+
+        <div class="breadcrumbs">
+          <ul class="breadcrumb">
+            <li> <i class="ace-icon fa fa-home home-icon"></i> Home</li>
+            <li class="active">Manage Store</li>
+          </ul>						
+          
+        </div>
+        
+        <div class="content_body">
+          <div class="btn_group">
+            <div class="add_new">
+              <a ui-sref="branchAdd"><i class="fa fa-plus"></i> Create New Branch</a>
+            </div>
+            <div class="add_new">
+              <a ui-sref="storeAdd"><i class="fa fa-plus"></i> Create New Store</a>
+            </div>
+          </div>
+          <div id="list-table" class="store_list">
+            <div class="filter_table form-group col-xs-12">
+              <div class="form-group select_location">
+                  <label class="">Category</label>
+                  <div class="location">
+                    <select class="form-control" required="">
+                      <option value="">All</option>
+                      <option value="">Food</option>
+                      <option value="">Apparel</option>
+                      <option value="">Gift</option>
+                    </select>
+                  </div>                
+              </div>
+              <div class="search_box">
+                <label>Search</label>
+                <input type="text" class="form-control" name="Search Store" placeholder="Store Name" /><i class="fa fa-search"></i>
+              </div>
+
+            </div>
+            <div class="tablt_title_cont">
+              <h4 class="tablt_title">Store List</h4>
+              <div class="form-group export_btn">
+                <button class="">Export <i class="fa fa-share"></i></button>
+              </div>
+            </div>
+            
+            <table  class="list-table display dataTable">
+              <thead >
+                <tr >
+                  <th>STORE ID</th>
+                  <th>NAME</th>
+                  <th>CATEGORY</th>
+                  <th>No. OF LOCATION</th>
+                  <th>GIFT CARD SALE</th>
+                  <th>REDEEMED AMOUNT</th>
+                  <th>BALANCE AMOUNT</th>
+                  <th>AMOUNT PAID-OUT</th>
+                  <th>REVENUE(GIFTBOMB)</th>
+                  <th  class="action">Action</th>
+                </tr>
+              </thead>
+              <tbody >
+                <tr  class="odd">
+                  <td>001</td>
+                  <td>Manginis Bakery</td>
+                  <td>Food</td>
+                  <td>5</td>
+                  <td>55</td>
+                  <td>$2000</td>
+                  <td>$500</td>
+                  <td>$1600</td>
+                  <td>$300</td>            
+                  <td>
+                    <a  class="action_icon" ui-sref="storeView"><i  class="fa fa-eye"></i></a>
+                    <a  class="action_icon" ui-sref="storeEdit"><i  class="fa fa-pencil"></i></a>
+                  </td>
+                </tr>
+                <tr  class="even">
+                  <td>018</td>
+                  <td>Jimmy Apparel</td>
+                  <td>Apparel</td>
+                  <td>8</td>
+                  <td>30</td>
+                  <td>$1500</td>
+                  <td>$1000</td>
+                  <td>$1200</td>
+                  <td>$250</td>            
+                  <td>
+                    <a  class="action_icon" ui-sref="storeView"><i  class="fa fa-eye"></i></a>
+                    <a  class="action_icon" ui-sref="storeEdit"><i  class="fa fa-pencil"></i></a>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+            <div  class="bottom">
+              <div  class="tblsubmit"></div>
+              <div  class="pagination-wrapper">
+                <div  class="dataTables_length">
+                  <label >Show upto <select  class=""> <option  value="10" ng-reflect-value="10">10</option><option  value="25" ng-reflect-value="25">25</option><option  value="50" ng-reflect-value="50">50</option><option  value="100" ng-reflect-value="100">100</option></select> </label>
+                </div>
+                <div  class="table-page-info"><div  aria-live="polite" class="dataTables_info" role="status">records.</div></div>
+                <div  class="dataTables_paginate paging_full_numbers" id="advertiser-details_paginate">
+                  <a  class="paginate_button first disabled" data-dt-idx="0" tabindex="0">First</a>
+                  <a  class="waves-effect waves-light btn paginate_button previous disabled" data-dt-idx="1" tabindex="0">Prev</a>
+                  <span ><a  class="waves-effect waves-light btn paginate_button current" data-dt-idx="2" tabindex="0">1</a></span>
+                  <a  class="waves-effect waves-light btn paginate_button next disabled" data-dt-idx="3" tabindex="0">Next</a>
+                  <a  class="paginate_button last disabled" data-dt-idx="4" tabindex="0">Last</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        
+      </div>
+    </div>
+<div class="footer" ng-include="'views/common/footer.html'"></div>
+<script src="assets/js/bootstrap-datepicker.js"></script>	

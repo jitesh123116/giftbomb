@@ -1,0 +1,23 @@
+<div class="top_nav" ng-include="'screens/layout/preLoginHeader.html'"></div>
+<div class="container_main">
+<div class="content_body">
+  <div class="title_page forgot_pass">
+    <img class="logo_img" src="./images/logo_giftbomb.png">
+    <!--<h3>Gift Bomb</h3>-->
+  </div>
+  <div class="login">
+    <h4 class="login_title">Forgot Password</h4>      
+    <p class="forgot_sub_title">Enter your registered email to reset your password.</p> 
+    <div class="space-6"></div>                       
+    <form name="forgotForm" ng-submit="forgot()">
+      <div class="form_ele email">
+        <label class="block clearfix">Email</label>
+        <input type="email" name="email" class="form-control" ng-model="user.email" ng-required="true">
+      </div>      
+      <div class="form_ele login_btn">
+        <button class="btn" type="submit">Submit</button>
+      </div>
+    </form>                        
+  </div>
+</div>
+</div>
